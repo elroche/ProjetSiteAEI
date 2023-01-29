@@ -1,0 +1,148 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.back {
+  display: inline-block;
+  position: relative;
+  width : 100%;
+}
+
+.back .text {
+  background: #0C2764;
+  opacity: 80%;
+  font-size: 2vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  margin: auto;
+  padding: 1vw;
+  left: 0;
+  right: 0;
+  top: 13vw;
+  color: white;
+  width: 65%;
+}
+
+.back .buttons {
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  margin-left: 3vw;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 30vw;
+  color: white;
+  width: 60%;
+}
+
+.buttonAccueil {
+  border: none;
+  background-color: #0C2764;
+  text-decoration: none;
+  color: white;
+  width: 45%;
+  font-size: 2vw;
+  padding: 1vw;
+}
+
+.big {
+  font-size: 3vw;
+}
+
+.fondBleuCiel {
+  background: #CBD9F9;
+  font-size: 2vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  margin: auto;
+  padding: 2vw;
+  left: 0;
+  right: 0;
+  top: 40vw;
+  height: 50vw;
+}
+
+.text2 {
+  color: black;
+  font-size: 3vw;
+  line-height: 60%;
+}
+
+.hrBleu{
+  background-color: #3369E7;
+  opacity: 80%;
+  margin:auto;
+  width: 40vw;
+}
+
+hr:not([size]) {
+  height: 2px;
+}
+
+.chiffres {
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 47vw;
+  width: 75%;
+}
+
+.pastille {
+  border-radius: 15%;
+  background:white;
+  color: #3369E7;
+  font-size: 2vw;
+  padding: 1vw;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.nosCompetences{
+  background: #4472c4;
+  font-size: 2vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  margin: auto;
+  padding: 1vw;
+  left: 0;
+  right: 0;
+  top: 66vw;
+}
+
+.hrBlanc{
+  background-color: white;
+  opacity: 100%;
+  margin:auto;
+  width: 40vw;
+}
