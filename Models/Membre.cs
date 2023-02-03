@@ -11,7 +11,7 @@ public class Membre
     public string? Prenom { get; set; }
 
     [Display(Name = "Année")]
-    public DateTime Year { get; set; }
+    public DateTime Annee { get; set; }
     public Pole? Pole { get; set; }
 
     public Role? Role { get; set; }

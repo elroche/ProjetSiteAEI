@@ -10,7 +10,7 @@ public class Article
     public string? Titre { get; set; }
 
     [Display(Name = "Résumé")]
-    public string? Resume { get; set; }
+    public string? Description { get; set; }
     public string? Texte { get; set; }
     public DateTime? Date { get; set; }
 }

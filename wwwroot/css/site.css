@@ -1,5 +1,7 @@
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -12,13 +14,10 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
 
 body {
   margin-bottom: 60px;
+  background-color : #CBD9F9;
 }
 
 .back {
@@ -27,7 +26,7 @@ body {
   width : 100%;
 }
 
-.back .text {
+.back .cadre {
   background: #0C2764;
   opacity: 80%;
   font-size: 2vw;
@@ -84,7 +83,7 @@ body {
   left: 0;
   right: 0;
   top: 40vw;
-  height: 50vw;
+  height: 30vw;
 }
 
 .text2 {
@@ -145,4 +144,107 @@ hr:not([size]) {
   opacity: 100%;
   margin:auto;
   width: 40vw;
+}
+
+.carou {
+  position:absolute;
+  top: 75vw;
+  width: 100%;
+}
+
+.cadre1 {
+  background: #3369E7;
+  font-size: 2vw;
+  z-index: 1;
+  text-align: center;
+  font-family: Georgia;
+  color: white;
+  width: 80%;
+  height: 30vw;
+  margin-bottom: 5vw;
+  margin-left: 8vw;
+  padding: 1vw;
+}
+
+.cadre2 {
+  background: #0C2764;
+  font-size: 2vw;
+  z-index: 1;
+  text-align: center;
+  font-family: Georgia;
+  color: white;
+  width: 80%;
+  height: 30vw;
+  margin-bottom: 5vw;
+  margin-left: 8vw;
+  padding-bottom: 0%;
+  padding: 1vw;
+}
+
+.cadre2 {
+  background: #0C2764;
+  font-size: 2vw;
+  z-index: 1;
+  text-align: center;
+  font-family: Georgia;
+  color: white;
+  width: 80%;
+  height: 30vw;
+  margin-bottom: 5vw;
+  margin-left: 8vw;
+  padding: 1vw;
+}
+
+.cadre3 {
+  background: #4472c4;
+  font-size: 1vw;
+  z-index: 1;
+  text-align: center;
+  font-family: Georgia;
+  color: white;
+  width: 80%;
+  height: 25vw;
+  margin-top: 2vw;
+  margin-bottom: 5vw;
+  margin-left: 5vw;
+}
+
+.logoDescription {
+  width:40%;
+}
+
+.description1 {
+  font-size: 1vw;
+  padding : 2vw;
+  padding-bottom: 0%;
+}
+
+.description2 {
+  font-size: 1vw;
+  padding-top: 25%;
+}
+
+.barreBleue {
+  background: #4472c4;
+  font-size: 2vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  left: 0;
+  right: 0;
+  top: 107vw;
+}
+
+.enSavoirPlus {
+  display: inline-block;
+  background-color: #0C2764;
+  text-decoration: none;
+  color: white;
+  width: 15%;
+  font-size: 1vw;
+  padding: 1vw;
+  left: 0;
+  right: 0;
+  margin: 1vw;;
 }
