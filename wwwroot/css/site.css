@@ -18,6 +18,7 @@ html {
 body {
   margin-bottom: 60px;
   background-color : #CBD9F9;
+  height: 250vw;
 }
 
 .back {
@@ -73,7 +74,6 @@ body {
 
 .fondBleuCiel {
   background: #CBD9F9;
-  font-size: 2vw;
   z-index: 1;
   position:absolute;
   text-align: center;
@@ -153,6 +153,7 @@ hr:not([size]) {
 }
 
 .cadre1 {
+  position: relative;
   background: #3369E7;
   font-size: 2vw;
   z-index: 1;
@@ -167,21 +168,7 @@ hr:not([size]) {
 }
 
 .cadre2 {
-  background: #0C2764;
-  font-size: 2vw;
-  z-index: 1;
-  text-align: center;
-  font-family: Georgia;
-  color: white;
-  width: 80%;
-  height: 30vw;
-  margin-bottom: 5vw;
-  margin-left: 8vw;
-  padding-bottom: 0%;
-  padding: 1vw;
-}
-
-.cadre2 {
+  position: relative;
   background: #0C2764;
   font-size: 2vw;
   z-index: 1;
@@ -193,6 +180,7 @@ hr:not([size]) {
   margin-bottom: 5vw;
   margin-left: 8vw;
   padding: 1vw;
+  bottom: 0;
 }
 
 .cadre3 {
@@ -216,12 +204,15 @@ hr:not([size]) {
 .description1 {
   font-size: 1vw;
   padding : 2vw;
-  padding-bottom: 0%;
+  position: absolute;
+  bottom: 0;
 }
 
 .description2 {
   font-size: 1vw;
   padding-top: 25%;
+  position: relative;
+  bottom: 0;
 }
 
 .barreBleue {
@@ -246,5 +237,143 @@ hr:not([size]) {
   padding: 1vw;
   left: 0;
   right: 0;
-  margin: 1vw;;
+  margin: 1vw;
+}
+
+.text3 {
+  font-size: 3vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  padding: 1vw;
+  left: 0;
+  right: 0;
+  top: 115vw;
+  line-height: 60%;
+}
+
+.carou2 {
+  position:absolute;
+  top: 115vw;
+  width: 100%;
+}
+
+.logosConfiance {
+  margin: 10vw;
+}
+
+.logoConfiance {
+  width: 12vw;
+}
+
+.actualites {
+  top:79vw;
+  position: relative;
+}
+
+.imageActualites {
+  position: absolute;
+  width: 100%;
+}
+
+.text4 {
+  color:#3369E7;
+  font-size: 3vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  padding: 1vw;
+  left: 0;
+  right: 0;
+  top: 1vw;
+  line-height: 60%;
+}
+
+.cadre4 {
+  background: white;
+  font-size: 2vw;
+  text-align: center;
+  font-family: Georgia;
+  width: 24vw;
+  z-index: 1;
+  position:absolute;
+  top: 10vw;  
+  margin: 0;
+  border-radius: 15% 0%;
+  padding: 2vw;
+  height: 30vw;
+}
+
+.lesActualites {
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+.imageActualites2 {
+  width: 20vw;
+  border-radius: 15% 0% 0% 0%;
+}
+
+.descriptionActualites {
+  color : black;
+  font-size: 1vw;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+}
+
+.titreActualites {
+  font-weight: bold;
+}
+
+.resumeActualites {
+  margin-bottom: 0%;
+}
+
+.lireLaSuite {
+  display: inline-block;
+  background-color: #0C2764;
+  text-decoration: none;
+  color: white;
+  font-size: 1vw;
+  padding: 1vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  left: 0;
+}
+
+.tousNosArticles {
+  position: absolute;
+  top:47vw;
+  background-color: #3369E7;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  width: 30%;
+  padding: 1vw;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.imageEquipe {
+  top : 135vw;
+  position: relative;
+  width: 100%;
+}
+
+.nousContacter {
+  position: absolute;
+  top:213vw;
+  background-color: #0C2764;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  width: 18%;
+  padding: 1vw;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
