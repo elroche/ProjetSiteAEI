@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MvcAEI</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MvcAEI.styles.css" asp-append-version="true" />
 </head>
@@ -59,11 +60,38 @@
     </div>
 
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer">
         <div class="container">
-            &copy; 2023 - MvcAEI -
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            <div></div>
+            <div class="text4">
+                <p>Mentions légales</p>
+                <hr class="hrBlanc">
+            </div>
+            <div class="descriptionMentionsLegales">
+
+                <i class="bi bi-info-circle"></i> L'association est présentée dans la section 'contact'.
+                <br /><br />
+                <i class="bi bi-eye"></i> Ce site n'utilise pas les cookies.
+                <br /><br />
+                <i class="bi bi-check2-square"></i> Le contenu du formulaire est transmis sous forme de mail aux
+                membres du bureau de la
+                Junior-Entreprise. Tous les champs sont nécessaires pour pouvoir recontacter <br> le demandeur.
+                L'envoi du formulaire fait office de consentement.
+                <br /><br />
+                <i class="bi bi-journal-bookmark"></i> Vous pouvez faire valoir vos droits d'opposition,
+                d'interrogation, d'accès et de rectification
+                en contactant le mail ci-après.
+                <br /><br />
+                <i class="bi bi-ui-checks"></i> Vous avez aussi le droit d'introduire une réclamation auprès de la
+                Cnil (Commission Nationale
+                Informatique et Libertés.)
+                <br /><br />
+                <i class="bi bi-envelope"></i> Email : president@junior-aei.com (Délégué à la Protection des
+                Données)
+                <br /><br />
+                <i class="bi bi-inbox-fill"></i> Site hébergé par OVH, adresse : 2, rue Kellermann, 59100 Roubaix,
+                numéro de téléphone : 1007.
+            </div>
+            <img src="/images/LOGOTYPE_AEI_AQUITAINE_BICHROMIE_FOND_FONCE.svg" class="logoFooter" alt="logo AEI pour fond foncé">
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

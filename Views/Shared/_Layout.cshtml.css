@@ -40,9 +40,32 @@ button.accept-policy {
 }
 
 .footer {
+  font-size:1vw;
   position: absolute;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+  background-color: #0C2764;
+  height: 37vw;
+  color:white;
+  padding-top: 9vw;
+  margin: 0em;
+}
+
+.descriptionMentionsLegales {
+  width: 100%;
+}
+
+.text4 {
+  color: white;
+  font-size: 3vw;
+  line-height: 60%;
+}
+
+.logoFooter {
+  top: 33vw;
+  width: 10vw;
+  position:absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
