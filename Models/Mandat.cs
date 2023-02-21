@@ -8,6 +8,6 @@ public class Mandat
     public int Id { get; set; }
 
     [Display(Name = "Année")]
-    public DateTime Annee { get; set; }
+    public int Annee { get; set; }
     public List<Membre>? Membres { get; set; }
 }

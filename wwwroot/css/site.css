@@ -226,7 +226,7 @@ hr:not([size]) {
   font-family: Georgia;
   left: 0;
   right: 0;
-  margin-bottom: 2vw;
+  margin-top: 42vw;
 }
 
 .enSavoirPlus {
@@ -262,7 +262,7 @@ hr:not([size]) {
 
 .carou2 {
   position:absolute;
-  top: 115vw;
+  margin-top: 7vw;
   width: 100%;
 }
 
@@ -294,7 +294,7 @@ hr:not([size]) {
   padding: 1vw;
   left: 0;
   right: 0;
-  top: 1vw;
+  margin-top: 1vw;
   line-height: 60%;
 }
 

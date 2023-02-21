@@ -9,13 +9,9 @@ public class Membre
 
     public string? Nom { get; set; }
     public string? Prenom { get; set; }
-
+    public string? Photo { get; set; }
     public Pole? Pole { get; set; }
     public Role? Role { get; set; }
-
-    //[Display(Name = "Code postal")]
-    //[Required(ErrorMessage = "Veuillez entrer un code postal valide.")]
-    //public int CodePostal { get; set; }
 
 }
 

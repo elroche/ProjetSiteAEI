@@ -7,6 +7,7 @@ public class AEIContext : DbContext
     public DbSet<Contact> Contacts { get; set; } = null!;
     public DbSet<Mandat> Mandats { get; set; } = null!;
     public DbSet<Membre> Membres { get; set; } = null!;
+    public DbSet<Paragraphe> Paragraphes {get; set;} = null!;
     public string DbPath { get; private set; }
 
     public AEIContext()

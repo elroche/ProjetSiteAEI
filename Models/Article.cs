@@ -11,8 +11,8 @@ public class Article
 
     [Display(Name = "Résumé")]
     public string? Description { get; set; }
-    public string? Texte { get; set; }
+    public string? Image { get; set; }
+    public List<Paragraphe>? Paragraphes { get; set; }
     public DateTime? Date { get; set; }
     public string? Editeur { get; set; }
 }
-
