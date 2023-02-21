@@ -24,7 +24,6 @@ body {
   display: inline-block;
   position: relative;
   width : 100%;
-  height: 263vw;
 }
 
 .cadre {
@@ -72,7 +71,7 @@ body {
   font-size: 3vw;
 }
 
-.fondBleuCiel {
+.quelquesChiffres {
   background: #CBD9F9;
   z-index: 1;
   position:absolute;
@@ -83,7 +82,7 @@ body {
   left: 0;
   right: 0;
   top: 40vw;
-  height: 30vw;
+  height: 29vw;
 }
 
 .text2 {
@@ -111,7 +110,7 @@ hr:not([size]) {
   margin: auto;
   left: 0;
   right: 0;
-  top: 47vw;
+  padding-top: 1vw;
   width: 75%;
 }
 
@@ -126,6 +125,10 @@ hr:not([size]) {
 }
 
 .nosCompetences{
+  height: 43vw;
+}
+
+.nosCompetencesTitre{
   background: #4472c4;
   font-size: 2vw;
   z-index: 1;
@@ -133,10 +136,10 @@ hr:not([size]) {
   text-align: center;
   font-family: Georgia;
   margin: auto;
-  padding: 1vw;
+  padding-top: 1vw;
   left: 0;
   right: 0;
-  top: 66vw;
+  height: 7vw;
 }
 
 .hrBlanc{
@@ -148,8 +151,8 @@ hr:not([size]) {
 
 .carou {
   position:absolute;
-  top: 75vw;
   width: 100%;
+  padding-top: 9vw;
 }
 
 .cadre1 {
@@ -218,13 +221,12 @@ hr:not([size]) {
 .barreBleue {
   background: #4472c4;
   font-size: 2vw;
-  z-index: 1;
   position:absolute;
   text-align: center;
   font-family: Georgia;
   left: 0;
   right: 0;
-  top: 107vw;
+  margin-bottom: 2vw;
 }
 
 .enSavoirPlus {
@@ -240,6 +242,10 @@ hr:not([size]) {
   margin: 1vw;
 }
 
+.confiance{
+  height: 37vw ;
+}
+
 .text3 {
   font-size: 3vw;
   z-index: 1;
@@ -249,7 +255,8 @@ hr:not([size]) {
   padding: 1vw;
   left: 0;
   right: 0;
-  top: 115vw;
+  margin-top: 7vw;
+  margin-bottom: 2vw;;
   line-height: 60%;
 }
 
@@ -268,7 +275,7 @@ hr:not([size]) {
 }
 
 .actualites {
-  top:79vw;
+  height: 35vw;
   position: relative;
 }
 
@@ -346,7 +353,7 @@ hr:not([size]) {
 
 .tousNosArticles {
   position: absolute;
-  top:47vw;
+  top: 43vw;
   background-color: #3369E7;
   text-align: center;
   text-decoration: none;
@@ -360,14 +367,17 @@ hr:not([size]) {
 }
 
 .imageEquipe {
-  top : 135vw;
   position: relative;
   width: 100%;
 }
 
+.contacter{
+  margin-top: 20vw;
+  margin-bottom: 18vw;
+}
+
 .nousContacter {
   position: absolute;
-  top:213vw;
   background-color: #0C2764;
   text-align: center;
   text-decoration: none;
@@ -375,6 +385,7 @@ hr:not([size]) {
   width: 18%;
   padding: 1vw;
   margin: auto;
+  margin-top: 12vw;
   left: 0;
   right: 0;
   font-size: 2vw;

@@ -1,0 +1,6 @@
+{
+  "omnisharp.useEditorFormattingSettings": true,
+  "omnisharp.organizeImportsOnFormat": false,
+  "twig-language-2.formatting": true,
+  "json.format.keepLines": false
+}

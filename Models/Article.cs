@@ -13,5 +13,6 @@ public class Article
     public string? Description { get; set; }
     public string? Texte { get; set; }
     public DateTime? Date { get; set; }
+    public string? Editeur { get; set; }
 }
 
