@@ -39,7 +39,7 @@ namespace MvcAEI.Migrations
                     Numero = table.Column<string>(type: "TEXT", nullable: false),
                     Objet = table.Column<string>(type: "TEXT", nullable: true),
                     Message = table.Column<string>(type: "TEXT", nullable: true),
-                    Date = table.Column<DateTime>(type: "TEXT", nullable: true)
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

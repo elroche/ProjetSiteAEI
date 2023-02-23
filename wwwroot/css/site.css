@@ -16,14 +16,12 @@ html {
 
 
 body {
-  margin-bottom: 60px;
   background-color : #CBD9F9;
 }
 
 .back {
   display: inline-block;
   position: relative;
-  width : 100%;
 }
 
 .cadre {
@@ -89,6 +87,7 @@ body {
   color: black;
   font-size: 3vw;
   line-height: 60%;
+  text-align: center;
 }
 
 .hrBleu{
@@ -373,7 +372,6 @@ hr:not([size]) {
 
 .contacter{
   margin-top: 20vw;
-  margin-bottom: 18vw;
 }
 
 .nousContacter {
@@ -390,3 +388,65 @@ hr:not([size]) {
   right: 0;
   font-size: 2vw;
 }
+
+.backContact{
+  padding-top: 9vh;
+  background-color: #3369E7;
+}
+
+.titreContact {
+  color:black;
+  font-size: 2vw;
+  z-index: 1;
+  position:absolute;
+  text-align: center;
+  font-family: Georgia;
+  padding: 1vw;
+  left: 0;
+  right: 0;
+  line-height: 60%;
+}
+
+.formulaireContact{
+  margin-top: 5vw;
+  padding-bottom: 5vw;
+  color:black;
+  justify-items: center;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+.champMessage{
+  height: 20vw;
+}
+
+.boutonFormulaire{
+  background-color:#0C2764;
+  color: white;
+  margin-left: 40vw;
+}
+
+.backPresentationJE{
+  background-color: white;
+  padding-top: 11vh;
+  /*A supprimer*/
+  height: 100vw;
+}
+
+.nousSommesUneJE{
+  margin: 4vw;
+}
+
+.titreNousSommesUneJE{
+  color: #3369E7;
+  font-size:2vw;
+  font-weight: bold;
+}
+
+.logoJE{
+  height: 20vw;
+  width: 20vw;
+}
+

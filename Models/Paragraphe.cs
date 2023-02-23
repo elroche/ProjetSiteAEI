@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+namespace MvcAEI.Models;
+
 public class Paragraphe
 {
     public int Id { get; set; }

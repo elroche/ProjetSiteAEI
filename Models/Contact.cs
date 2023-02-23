@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+namespace MvcAEI.Models;
 
 public class Contact
 {
@@ -20,6 +21,12 @@ public class Contact
     public string? Numero { get; set; }
     public string? Objet { get; set; }
     public string? Message { get; set; }
-    public DateTime? Date { get; set; }
+    public DateTime date = DateTime.Today;
+
+    public DateTime Date
+    {
+        get { return date; }
+        set { date = value;}
+    }
 }
 

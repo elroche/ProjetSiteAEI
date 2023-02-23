@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MvcAEI.Models;
 
 public class ContactController : Controller
 {
@@ -12,33 +13,26 @@ public class ContactController : Controller
         _context = context;
     }
 
-    //Récupère tous les cinémas 
-    /*public string Index()
-    {
-
-        return "Hello World!"; ;
-    }*/
 
 
-
-    // GET: Cinema/Create
-    // Permet d'ajouter un cinéma
-    /*public IActionResult Create()
+    // GET: Contact/Create
+    // Permet d'ajouter un contact grâce au formulaire
+    public IActionResult Create()
     {
         return View();
     }
 
-    // POST: Cinema/Create
+    // POST: Contact/Create
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Nom,Adresse,CodePostal,Ville,Responsable,PrixPlace")] Cinema cinema)
+    public async Task<IActionResult> Create([Bind("Id,Nom,Email,Numero,Objet,Message,Date")] Contact contact)
     {
         if (ModelState.IsValid)
         {
-            _context.Add(cinema);
+            _context.Add(contact);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Create));
         }
-        return View(cinema);
-    }*/
+        return View(contact);
+    }
 }

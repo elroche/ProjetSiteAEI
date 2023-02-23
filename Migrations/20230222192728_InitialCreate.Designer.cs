@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MvcAEI.Migrations
 {
     [DbContext(typeof(AEIContext))]
-    [Migration("20230221142034_InitialCreate")]
+    [Migration("20230222192728_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace MvcAEI.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.2");
 
-            modelBuilder.Entity("Article", b =>
+            modelBuilder.Entity("MvcAEI.Models.Article", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,13 +45,13 @@ namespace MvcAEI.Migrations
                     b.ToTable("Articles");
                 });
 
-            modelBuilder.Entity("Contact", b =>
+            modelBuilder.Entity("MvcAEI.Models.Contact", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime?>("Date")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -76,7 +76,7 @@ namespace MvcAEI.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("Mandat", b =>
+            modelBuilder.Entity("MvcAEI.Models.Mandat", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,7 +90,7 @@ namespace MvcAEI.Migrations
                     b.ToTable("Mandats");
                 });
 
-            modelBuilder.Entity("Membre", b =>
+            modelBuilder.Entity("MvcAEI.Models.Membre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -121,7 +121,7 @@ namespace MvcAEI.Migrations
                     b.ToTable("Membres");
                 });
 
-            modelBuilder.Entity("Paragraphe", b =>
+            modelBuilder.Entity("MvcAEI.Models.Paragraphe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -143,26 +143,26 @@ namespace MvcAEI.Migrations
                     b.ToTable("Paragraphes");
                 });
 
-            modelBuilder.Entity("Membre", b =>
+            modelBuilder.Entity("MvcAEI.Models.Membre", b =>
                 {
-                    b.HasOne("Mandat", null)
+                    b.HasOne("MvcAEI.Models.Mandat", null)
                         .WithMany("Membres")
                         .HasForeignKey("MandatId");
                 });
 
-            modelBuilder.Entity("Paragraphe", b =>
+            modelBuilder.Entity("MvcAEI.Models.Paragraphe", b =>
                 {
-                    b.HasOne("Article", null)
+                    b.HasOne("MvcAEI.Models.Article", null)
                         .WithMany("Paragraphes")
                         .HasForeignKey("ArticleId");
                 });
 
-            modelBuilder.Entity("Article", b =>
+            modelBuilder.Entity("MvcAEI.Models.Article", b =>
                 {
                     b.Navigation("Paragraphes");
                 });
 
-            modelBuilder.Entity("Mandat", b =>
+            modelBuilder.Entity("MvcAEI.Models.Mandat", b =>
                 {
                     b.Navigation("Membres");
                 });

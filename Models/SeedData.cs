@@ -1,3 +1,4 @@
+namespace MvcAEI.Models;
 
 public class SeedData
 {
