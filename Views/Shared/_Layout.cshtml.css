@@ -7,6 +7,11 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.navbarAEI {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
 a {
   color: #0077cc;
 }
@@ -41,7 +46,11 @@ button.accept-policy {
 
 .footer {
   font-size:1vw;
+  /*Mettre en absolute pour qu'il soit bien en pied de page 
+  mais soucis sur toutes les pages car se supperpose sur les dernières div
+  , à régler*/
   position: relative;
+  bottom: 0;
   width: 100%;
   background-color: #0C2764;
   height: 34vw;
@@ -69,4 +78,8 @@ button.accept-policy {
   margin: auto;
   left: 0;
   right: 0;
+}
+
+.logoNav{
+  width: 10vw;
 }

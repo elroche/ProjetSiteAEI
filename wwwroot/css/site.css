@@ -201,6 +201,11 @@ hr:not([size]) {
 
 .logoDescription {
   width:40%;
+  font-size: 7vw;;
+}
+
+.logoTelecommunicationRobotiqueAccueil {
+  margin-top: -2vw;
 }
 
 .description1 {
@@ -409,7 +414,7 @@ hr:not([size]) {
 
 .formulaireContact{
   margin-top: 5vw;
-  padding-bottom: 5vw;
+  padding-bottom: 2vw;
   color:black;
   justify-items: center;
 }
@@ -428,25 +433,180 @@ hr:not([size]) {
   margin-left: 40vw;
 }
 
+.detailsContact{
+  margin-top: 5vw;
+  margin-left: 13vw;
+  color: white;
+}
+
+.detailsContactTitre{
+  font-size: 2vw; 
+  margin-bottom: -1px;
+}
+
+.descriptionDetailsContact{
+  font-weight: 200;
+}
+
+.contacts{
+  margin-top: 3vw;
+  font-weight: 200;
+}
+
+.detailsContactInformations{
+  margin-bottom: 2px;
+}
+
 .backPresentationJE{
   background-color: white;
   padding-top: 11vh;
-  /*A supprimer*/
-  height: 100vw;
+  padding: 4vw;
 }
 
 .nousSommesUneJE{
-  margin: 4vw;
+  margin-top: 40px;
+  margin-bottom: 4vw;
 }
 
 .titreNousSommesUneJE{
   color: #3369E7;
-  font-size:2vw;
+  font-size:larger;
   font-weight: bold;
 }
 
 .logoJE{
   height: 20vw;
-  width: 20vw;
+  width: 23vw;
 }
 
+.titreDetailsJE{
+  color: #3369E7;
+  font-weight: bold;
+}
+
+.iconJE {
+  margin-left: -2vw;
+  color: black;
+  padding-right: 1vw;
+}
+
+.backMentionsLegales
+{
+  height: 13vw;
+  background-color: #0C2764;
+}
+
+.boutonReseauSocial{
+  color: white;
+  font-size: 4vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-top: 3vw;
+}
+
+.backNosCompetences {
+  background-color: white;
+  /* A supprimer : */
+  padding-bottom: 5em;
+}
+
+.fondTitreNosCompetences {
+  background-color:#4472c4;
+  padding: 1vw;
+  margin-top: 3em;
+}
+
+.titreNosCompetences {
+  font-size: 2vw;
+  font-weight: 550;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.hrBlancCompetences{
+  background-color: white;
+  opacity: 100%;
+  margin:auto;
+  width: 30vw;
+}
+
+.uneCompetences {
+  width: 90%;
+  background-color: #4472c4;
+  margin-inline: auto;
+  color: white;
+  padding-bottom: 4vw;
+  margin-bottom: 3vw;
+}
+
+.hautSectionCompetence {
+  background-color: darkblue;  
+  height: 14vw;
+}
+
+.titreRubriquesCompetences {
+  font-size: 5vw;
+  font-weight: 450;
+  vertical-align: middle;
+  text-align: end;
+}
+
+.iconCompetence {
+  width: 13vw;
+  vertical-align: middle;
+  font-size: 9vw;
+  margin-right: 6vw;
+}
+
+
+.detailsCompetence {
+  text-align: center;
+}
+
+.descriptionCollapseCompetence {
+  text-align: center;
+  background-color: #4472c4;
+  color: white;
+}
+
+.titreDescriptionCollapseCompetence {
+  font-weight: 600;
+}
+
+.collapseCompetence{
+  border: 0;
+  border-radius: 0%;
+  border-color: #4472c4;
+}
+
+.collapse {
+  display: none;
+}
+
+#collapse-container {
+  position: relative;
+}
+
+#collapse-container .btn {
+  position: absolute;
+}
+
+.bouttonCollapse {
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.bouttonCollapse:focus{
+  box-shadow:none
+}
+
+.imagesRubriquesCompetences {
+  width: 90%;
+  position: absolute;
+}
+
+.test{
+  height:40px;
+  border:50px;
+  background-color: #4472c4;
+}

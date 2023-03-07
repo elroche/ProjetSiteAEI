@@ -3,22 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcAEI.Models;
 
-public class AProposController : Controller
+public class CompetencesController : Controller
 {
     private readonly AEIContext _context;
 
 
-    public AProposController(AEIContext context)
+    public CompetencesController(AEIContext context)
     {
         _context = context;
     }
 
-    public IActionResult PresentationJE()
-    {
-        return View();
-    }
-
-    public IActionResult MentionsLegales()
+    public IActionResult Index()
     {
         return View();
     }

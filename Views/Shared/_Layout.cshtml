@@ -14,9 +14,11 @@
 <body>
     <header>
         <nav
-            class="navbar navbar-expand-sm fixed-top navbar-toggleable-sm navbar-light bg-white border-bottom border-dark border-3 box-shadow mb">
+            class="navbar navbar-expand-sm fixed-top navbar-toggleable-sm navbar-light bg-white border-bottom border-dark border-3 box-shadow navbarAEI ">
             <div class="container-fluid pb-0">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MvcAEI</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">            
+                    <img src="/images/LOGOTYPE_AEI_AQUITAINE_BICHROMIE_FOND_CLAIR.svg" class="logoNav" alt="logo AEI pour fond foncé">
+                    </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,12 +36,14 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item text-dark" asp-area="" asp-controller="APropos"
                                 asp-action="PresentationJE">Présentation JE</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">L'équipe</a></li>
-                                <li><a class="dropdown-item text-dark" href="#">Mentions légales</a></li>
+                                <li><a class="dropdown-item text-dark" asp-area="" asp-controller="Mandat"
+                                asp-action="Index">L'équipe</a></li>
+                                <li><a class="dropdown-item text-dark" asp-area="" asp-controller="APropos"
+                                asp-action="MentionsLegales">Mentions légales</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Competences"
                                 asp-action="Index">Compétences</a>
                         </li>
                         <li class="nav-item">
@@ -49,10 +53,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Contact"
                                 asp-action="Create">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
