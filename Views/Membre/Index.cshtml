@@ -1,0 +1,170 @@
+﻿@model IEnumerable<MvcAEI.Models.Membre>
+@{
+    ViewData["Title"] = "Les mandats";
+}
+
+<div class="backEquipe">
+
+    <div class="formulaireSelectionMandat">
+        <form asp-controller="Membre" asp-action="Index">
+            <p>Mandat :
+                <select class=" mb-3 px-5 py-1" name="id">
+                    @foreach (var mandat in (IEnumerable<Mandat>)ViewData["mandats"])
+                    {
+                        <option value="@mandat.Id">@mandat.Annee</option>
+                    }
+                </select>
+                <input type="submit" class="btn boutonFormulaireMandat" style="background-color:#3369E7; color:white;" value="Recherche" />
+            </p>
+        </form>
+    </div>
+
+    <div class="px-4">
+        <div class="row p-0 m-0">
+            @if (Model.Count() > 0)
+            {
+                <p class="titrePoleEquipe">Présidence</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la gestion et du management de la J.E.</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.Bureau)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                    <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                    <div class="motMembresEquipe">
+                                        <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                    </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p class="titrePoleEquipe">Pôle Communication</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de l’identité visuelle de la J.E.</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.Communication)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p class="titrePoleEquipe">Pôle Développement Commercial</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge du développement commercial de la J.E.</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.DevCommercial)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p class="titrePoleEquipe">Pôle Étude</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la gestion et suivi des projets</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.Etude)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p class="titrePoleEquipe">Pôle Trésorerie</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge des finances de la J.E.</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.Tresorerie)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p class="titrePoleEquipe">Pôle Qualité</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la conformité de nos activités</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.Qualite)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+                <p class="titrePoleEquipe">Pôle DSI (Direction des Systèmes d’Informations)</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge des systèmes d’informations</p>
+                <hr class="hrNoir">
+                foreach (var item in Model)
+                {
+                    if (item.Pole == Pole.SystemeInformation)
+                    {
+                        <div class="cadreMembre d-flex justify-content-start">  
+                            <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
+                            <div class="descriptionMembre">
+                                <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+
+</div>
+

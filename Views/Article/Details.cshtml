@@ -1,0 +1,13 @@
+﻿@model MvcAEI.Models.Article
+@{
+    ViewData["Title"] = "L'Actualité";
+}
+
+<div class="backUneActualite">
+    <p class="titreArticlePageDetailActualite">@Html.DisplayFor(model => model.Titre)</p>
+    <div class="sousTitreArticlePageDetailActualite">
+        <p>@Html.DisplayFor(model => model.Editeur)</p>
+        <p>@Html.DisplayFor(model => model.Date)</p>
+    </div>
+    <img class="imagesArticlePageDetailsActualite" alt="image de l'actualité" src=@Html.DisplayFor(model => model.Image)></img>
+</div>

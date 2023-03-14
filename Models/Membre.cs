@@ -10,8 +10,7 @@ public class Membre
     public string? Nom { get; set; }
     public string? Prenom { get; set; }
     public string? Photo { get; set; }
-
-    //Pas sure encore peut etre à supprimer
+    public string? Mot {get;set;}
     public Mandat? Mandat { get; set; }
     public Pole? Pole { get; set; }
     public Role? Role { get; set; }

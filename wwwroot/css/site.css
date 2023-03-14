@@ -605,8 +605,156 @@ hr:not([size]) {
   position: absolute;
 }
 
-.test{
-  height:40px;
-  border:50px;
-  background-color: #4472c4;
+
+.backEquipe {
+  margin-top: 3em;
+  margin-bottom: 8vw;
+}
+
+.titrePoleEquipe {
+  color:#3369E7;
+  font-size: 4vw;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-left: 1vw;
+}
+
+.descriptionPoleEquipe {
+  font-size: 1.9vw;
+  font-weight: 400;
+  margin-left: 1vw;
+}
+
+.hrNoir{
+  background-color: black;
+  opacity: 100%;
+  width: 60vw;
+  border:solid 2px;
+  border-radius: 2vw;
+  margin-left: 2vw;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.cadreMembre {
+  width: 48%;
+  margin-bottom: 2vw;
+  margin-left: 1vw;
+}
+
+.photoMembre {
+  width: 48%;
+}
+
+.descriptionMembre{
+  left: 1vw;
+  padding-left: 1vw;
+  position: relative;
+  background-color: #0C2764;
+  width: 100%;
+  color: white;
+}
+
+.nomMembreEquipe {
+  font-size: 2.2vw;
+  font-weight: 500;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.roleMembreEquipe {
+  font-size: 1.8vw;
+  font-weight: 400;
+}
+
+.motMembresEquipe{
+  position:absolute;
+  bottom: 0;
+  font-size: 1.4vw;
+}
+
+.formulaireSelectionMandat {
+  padding-left: 4vw;
+  padding-top: 3vw;
+}
+
+.boutonFormulaireMandat {
+  margin-top : -0.3vw;
+}
+
+.backActualités {
+  margin-top: 5rem;
+}
+
+
+.titrePageActualites {
+  text-align: center;
+  margin-bottom: 4vw;
+}
+
+.hrNoirTitreActualités {
+  opacity: 100%;
+  width: 30vw;
+  border:solid 1px;
+  border-radius: 2vw;
+  margin:auto;
+  margin-top: 1vw;
+}
+
+.imagesArticlePageActualites{
+  width: 28vw;
+  margin: auto;
+  padding: auto;
+  display: flex;
+}
+
+.unArticlePageActualites {
+  width: 410px;
+  margin-bottom: 5vw;
+}
+
+.descriptionArticlePageActualites {
+  margin-top: 3vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  text-align: center;
+}
+
+.titreArticlePageActualites{
+  font-size: 1.2em;
+  font-weight: 645;
+  margin-bottom: 0.5vw;
+}
+
+.lireLaSuite {
+  background-color: #0C2764;
+  text-decoration: none;
+  color: white;
+  width: 13vw;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.backUneActualite {
+  padding-top: 5em;
+  padding-bottom: 5vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.titreArticlePageDetailActualite {
+  color: #0C2764;
+  text-align: center;
+  font-size: 3vw;
+}
+
+.imagesArticlePageDetailsActualite{
+  width: 60vw;
+  margin: auto;
+  padding: auto;
+  display: flex;
+}
+
+.sousTitreArticlePageDetailActualite {
+  text-align: center;
 }

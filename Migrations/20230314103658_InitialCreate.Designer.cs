@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MvcAEI.Migrations
 {
     [DbContext(typeof(AEIContext))]
-    [Migration("20230222192728_InitialCreate")]
+    [Migration("20230314103658_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -59,9 +59,11 @@ namespace MvcAEI.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Message")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nom")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Numero")
@@ -69,6 +71,7 @@ namespace MvcAEI.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Objet")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -99,6 +102,9 @@ namespace MvcAEI.Migrations
                     b.Property<int?>("MandatId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Mot")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nom")
                         .HasColumnType("TEXT");
 
@@ -127,7 +133,7 @@ namespace MvcAEI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ArticleId")
+                    b.Property<int?>("ArticeId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Texte")
@@ -138,23 +144,27 @@ namespace MvcAEI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArticleId");
+                    b.HasIndex("ArticeId");
 
                     b.ToTable("Paragraphes");
                 });
 
             modelBuilder.Entity("MvcAEI.Models.Membre", b =>
                 {
-                    b.HasOne("MvcAEI.Models.Mandat", null)
+                    b.HasOne("MvcAEI.Models.Mandat", "Mandat")
                         .WithMany("Membres")
                         .HasForeignKey("MandatId");
+
+                    b.Navigation("Mandat");
                 });
 
             modelBuilder.Entity("MvcAEI.Models.Paragraphe", b =>
                 {
-                    b.HasOne("MvcAEI.Models.Article", null)
+                    b.HasOne("MvcAEI.Models.Article", "Artice")
                         .WithMany("Paragraphes")
-                        .HasForeignKey("ArticleId");
+                        .HasForeignKey("ArticeId");
+
+                    b.Navigation("Artice");
                 });
 
             modelBuilder.Entity("MvcAEI.Models.Article", b =>

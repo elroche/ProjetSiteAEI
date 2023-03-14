@@ -34,11 +34,11 @@ namespace MvcAEI.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nom = table.Column<string>(type: "TEXT", nullable: true),
+                    Nom = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     Numero = table.Column<string>(type: "TEXT", nullable: false),
-                    Objet = table.Column<string>(type: "TEXT", nullable: true),
-                    Message = table.Column<string>(type: "TEXT", nullable: true),
+                    Objet = table.Column<string>(type: "TEXT", nullable: false),
+                    Message = table.Column<string>(type: "TEXT", nullable: false),
                     Date = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -67,14 +67,14 @@ namespace MvcAEI.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Titre = table.Column<string>(type: "TEXT", nullable: true),
                     Texte = table.Column<string>(type: "TEXT", nullable: true),
-                    ArticleId = table.Column<int>(type: "INTEGER", nullable: true)
+                    ArticeId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Paragraphes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Paragraphes_Articles_ArticleId",
-                        column: x => x.ArticleId,
+                        name: "FK_Paragraphes_Articles_ArticeId",
+                        column: x => x.ArticeId,
                         principalTable: "Articles",
                         principalColumn: "Id");
                 });
@@ -88,9 +88,10 @@ namespace MvcAEI.Migrations
                     Nom = table.Column<string>(type: "TEXT", nullable: true),
                     Prenom = table.Column<string>(type: "TEXT", nullable: true),
                     Photo = table.Column<string>(type: "TEXT", nullable: true),
+                    Mot = table.Column<string>(type: "TEXT", nullable: true),
+                    MandatId = table.Column<int>(type: "INTEGER", nullable: true),
                     Pole = table.Column<int>(type: "INTEGER", nullable: true),
-                    Role = table.Column<int>(type: "INTEGER", nullable: true),
-                    MandatId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Role = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -108,9 +109,9 @@ namespace MvcAEI.Migrations
                 column: "MandatId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Paragraphes_ArticleId",
+                name: "IX_Paragraphes_ArticeId",
                 table: "Paragraphes",
-                column: "ArticleId");
+                column: "ArticeId");
         }
 
         /// <inheritdoc />
