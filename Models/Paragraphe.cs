@@ -9,6 +9,6 @@ public class Paragraphe
     public int Id { get; set; }
     public string? Titre { get; set; }
     public string? Texte { get; set; }
-    public Article? Artice {get; set;}
+    public Article? Article {get; set;}
 }
 

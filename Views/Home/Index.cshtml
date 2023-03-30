@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<MvcAEI.Models.Article>
+
+@{
+    ViewData["Title"] = "Page d'accueil";
  }
 
 <div class="back">
@@ -232,41 +234,25 @@
             <hr class="hrBleu">
         </div>
         <div class="row lesActualites">
-            <div class="col-4">
-                <div class="cadre4">
-                    <img src="https://junior-aei.com/images/Image_temoignage_Jeremie_STOETENS.png"
-                        class="imageActualites2">
-                    <div class="descriptionActualites">
-                        <p class="titreActualites">Témoignage d'un réalisateur</p>
-                        <p class="resumeActualites">Témoignage d'un réalisateur d'AEI</p>
-                        <a href="#" class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="cadre4">
-                    <img src="https://junior-aei.com/images/Image_temoignage_Jeremie_STOETENS.png"
-                        class="imageActualites2">
-                    <div class="descriptionActualites">
-                        <p class="titreActualites">Témoignage d'un réalisateur</p>
-                        <p class="resumeActualites">Témoignage d'un réalisateur d'AEI</p>
-                        <a href="#" class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="cadre4">
-                    <img src="https://junior-aei.com/images/Image_temoignage_Jeremie_STOETENS.png"
-                        class="imageActualites2">
-                    <div class="descriptionActualites">
-                        <p class="titreActualites">Témoignage d'un réalisateur</p>
-                        <p class="resumeActualites">Témoignage d'un réalisateur d'AEI</p>
-                        <a href="#" class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
-                    </div>
-                </div>
-            </div>
+            @if (Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                    {
+                        <div style="width: 33%;">
+                            <div class="cadre4">
+                                <img src=@Html.DisplayFor(modelItem => item.Image)
+                                    class="imageActualites2">
+                                <div class="descriptionActualites">
+                                    <p class="titreActualites">@Html.DisplayFor(modelItem => item.Titre)</p>
+                                    <p class="resumeActualites">@Html.DisplayFor(modelItem => item.Description)</p>
+                                    <a asp-controller="Article" asp-action="Details" asp-route-id="@item.Id"  class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
+                                </div>
+                            </div>                        
+                        </div>
+                    }
+            }
         </div>
-        <a href="#" class="tousNosArticles" role="button" aria-pressed="true">Voir tous nos articles</a>
+        <a asp-controller="Article" class="tousNosArticles" role="button" aria-pressed="true">Voir tous nos articles</a>
     </div>
 
     <div class="contacter">

@@ -17,10 +17,12 @@
                     <div class="unArticlePageActualites">
                         <img class="imagesArticlePageActualites" alt="image de l'actualité" src=@Html.DisplayFor(modelItem => item.Image)></img>
                         <div class="descriptionArticlePageActualites">
-                            <p class="titreArticlePageActualites">@Html.DisplayFor(modelItem => item.Titre)</p>
-                            <p class="">@Html.DisplayFor(modelItem => item.Description)</p>
-                            <div class="d-flex justify-content-center">
-                                <a asp-action="Details" asp-route-id="@item.Id" class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
+                            <div style="margin-bottom: 0;">
+                                <p class="titreArticlePageActualites">@Html.DisplayFor(modelItem => item.Titre)</p>
+                                <p class="">@Html.DisplayFor(modelItem => item.Description)</p>
+                                <div class="d-flex justify-content-center">
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
+                                </div>
                             </div>
                         </div>
                     </div>

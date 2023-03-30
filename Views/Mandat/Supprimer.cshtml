@@ -1,0 +1,28 @@
+﻿@model MvcAEI.Models.Mandat
+
+@{
+    ViewData["Title"] = "Supression d'un mandat";
+}
+
+<div class="supprimerMandat">
+    <h2 class="mb-5" style="text-align:center; color: #0C2764;">Suppression du mandat @Html.DisplayFor(model => model.Annee) </h2>
+    <div class="container">
+        <p class="text-danger">@ViewData["ErrorMessage"]</p>
+        <p class="text-center pb-3">Etes vous sûr de vouloir supprimer ce mandat?</p>
+        <div class="text-center mb-5">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Supprimer" class="btn btn-danger" />
+                </div>
+            }
+        </div>
+        <div class="mt-5 pt-5">
+            <a class="text-decoration-none" asp-action="Index"><i
+                    class="bi bi-arrow-left-circle-fill"></i> Retour à
+                la liste des mandats</a>
+        </div>
+    </div>
+</div>

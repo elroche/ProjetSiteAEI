@@ -1,0 +1,34 @@
+﻿@model MvcAEI.Models.Mandat
+
+@{
+    ViewData["Title"] = "Modifier le mandat";
+}
+
+<div class="backModifierMandat">
+    <h2 class="mb-5" style="text-align:center; color: #0C2764;">Modifier le mandat de l'année @Html.DisplayFor(model => model.Annee)</h2>
+
+    <form asp-action="Modifier">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row justify-content-center">
+                <label asp-for="Annee" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-5">
+                    <input asp-for="Annee" class="form-control" />
+                    <span asp-validation-for="Annee" class="text-danger"></span>
+                </div>
+            </div>
+        <div class="form-group text-center mt-4">
+            <input type="submit" value="Modifier" class="btn btn-primary" />
+        </div>
+    </form>
+    <div class="mt-5 pt-5 ml-5">
+            <a class="text-decoration-none" asp-action="Index"><i
+                    class="bi bi-arrow-left-circle-fill"></i> Retour à
+                la page précédente</a>
+        </div>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

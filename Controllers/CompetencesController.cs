@@ -2,13 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcAEI.Models;
+using MvcAEI.Data;
 
 public class CompetencesController : Controller
 {
-    private readonly AEIContext _context;
+    private readonly ApplicationDbContext _context;
 
-
-    public CompetencesController(AEIContext context)
+    public CompetencesController(ApplicationDbContext context)
     {
         _context = context;
     }

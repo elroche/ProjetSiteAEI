@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MvcAEI.Models;
+using MvcAEI.Data;
 
 public class ArticleController : Controller
 {
-    private readonly AEIContext _context;
+    private readonly ApplicationDbContext _context;
 
-
-    public ArticleController(AEIContext context)
+    public ArticleController(ApplicationDbContext context)
     {
         _context = context;
     }
@@ -26,6 +26,9 @@ public class ArticleController : Controller
         {
             return NotFound();
         }
+        var paragraphes = _context.Paragraphes.Where(p => p.Article.Id==id).ToList();
+        ViewData["paragraphes"] = paragraphes;
+
         var article = await _context.Articles
             .Include(a => a.Paragraphes)
             .Where(a => a.Id == id)

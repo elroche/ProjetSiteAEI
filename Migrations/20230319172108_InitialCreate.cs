@@ -52,7 +52,7 @@ namespace MvcAEI.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Annee = table.Column<int>(type: "INTEGER", nullable: false)
+                    Annee = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,14 +67,14 @@ namespace MvcAEI.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Titre = table.Column<string>(type: "TEXT", nullable: true),
                     Texte = table.Column<string>(type: "TEXT", nullable: true),
-                    ArticeId = table.Column<int>(type: "INTEGER", nullable: true)
+                    ArticleId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Paragraphes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Paragraphes_Articles_ArticeId",
-                        column: x => x.ArticeId,
+                        name: "FK_Paragraphes_Articles_ArticleId",
+                        column: x => x.ArticleId,
                         principalTable: "Articles",
                         principalColumn: "Id");
                 });
@@ -109,9 +109,9 @@ namespace MvcAEI.Migrations
                 column: "MandatId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Paragraphes_ArticeId",
+                name: "IX_Paragraphes_ArticleId",
                 table: "Paragraphes",
-                column: "ArticeId");
+                column: "ArticleId");
         }
 
         /// <inheritdoc />

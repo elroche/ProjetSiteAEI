@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MvcAEI.Models.Mandat>
+
+@{
+    ViewData["Title"] = "Les Mandats";
+}
+
+@if (@TempData["messageSuccess"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["messageSuccess"]
+    </div>
+}
+
+<div class="backMandatIndex">
+    <h2 class="mb-5" style="color: #0C2764; text-align:center;">Les Mandats</h2>
+    <a class="btn btn-dark ml-5" asp-controller="Mandat" asp-action="Creer"><i class="bi bi-plus-circle"></i> Ajouter un
+        Mandat</a>
+    <div class="card-group mt-5" style="align-items: center; justify-content: center;">
+        <div style="width: 20em;">
+            @foreach (var item in Model)
+            {
+                <div class="mb-4">
+                    <div class="card" style="width: 100%;">
+                            <h5 class="card-title mt-2" style="text-align: center;">@Html.DisplayFor(modelItem => item.Annee)</h5>
+                            <hr>
+                            <div style="margin: auto;">
+                                <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary mb-1" style="display:block;">Modifier</a>
+                                <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger mb-1">Supprimer</a>
+                            </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -6,8 +6,13 @@
 <div class="backUneActualite">
     <p class="titreArticlePageDetailActualite">@Html.DisplayFor(model => model.Titre)</p>
     <div class="sousTitreArticlePageDetailActualite">
-        <p>@Html.DisplayFor(model => model.Editeur)</p>
-        <p>@Html.DisplayFor(model => model.Date)</p>
+        <p>@Html.DisplayFor(model => model.Editeur), @Html.DisplayFor(model => model.Date)</p>
     </div>
     <img class="imagesArticlePageDetailsActualite" alt="image de l'actualité" src=@Html.DisplayFor(model => model.Image)></img>
+    
+    @foreach (var paragraphe in Model.Paragraphes)
+        {
+            <p class="titreParagrapheArticle">@Html.DisplayFor(modelItem => paragraphe.Titre)</p>
+            <p class="texteParagrapheArticle">@paragraphe.Texte</p>
+        }
 </div>

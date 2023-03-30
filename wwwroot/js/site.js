@@ -19,4 +19,3 @@ function toggleCollapse(colcont, button) {
   }
   
   
-  

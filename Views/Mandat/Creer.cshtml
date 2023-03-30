@@ -1,0 +1,32 @@
+﻿@model MvcAEI.Models.Mandat
+
+@{
+    ViewData["Title"] = "Ajouter un mandat";
+}
+
+<div class="backCreerMandat">
+    <h2 class="mb-5" style="text-align:center; color: #0C2764;">Ajouter un mandat</h2>
+    <form asp-action="Creer">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row justify-content-center" style="text-align:center;">
+                <label asp-for="Annee" class="control-label"></label>
+                <div class="col-sm-5">
+                    <input asp-for="Annee" class="form-control" />
+                    <span asp-validation-for="Annee" class="text-danger"></span>
+                </div>
+            </div>
+        <div class="form-group text-center mt-4">
+            <input type="submit" value="Ajouter" class="btn btn-primary" />
+        </div>
+    </form>
+    <div class="mt-5 pt-5 ml-5">
+        <a class="text-decoration-none" asp-action="Index"><i
+                class="bi bi-arrow-left-circle-fill"></i> Retour à
+            la liste des mandats</a>
+    </div>
+</div>
+
+
+    @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

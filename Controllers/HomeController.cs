@@ -1,23 +1,26 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MvcAEI.Models;
-
-namespace MvcAEI.Controllers;
+using MvcAEI.Data;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ApplicationDbContext context)
     {
-        _logger = logger;
+        _context = context;
     }
+
+
 
     public IActionResult Index()
     {
-        return View();
+        var articles = _context.Articles.OrderByDescending(a => a.Id).Take(3).ToList();
+        return View(articles);
     }
 
     public IActionResult Privacy()
