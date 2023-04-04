@@ -16,7 +16,7 @@ public class HomeController : Controller
     }
 
 
-
+    // Page d'accueil
     public IActionResult Index()
     {
         var articles = _context.Articles.OrderByDescending(a => a.Id).Take(3).ToList();

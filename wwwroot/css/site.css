@@ -347,6 +347,7 @@ hr:not([size]) {
   margin-top: 1vw;
   margin-bottom: 1vw;
   left: 0;
+  border-radius: 4px;
 }
 
 .tousNosArticles {
@@ -704,7 +705,7 @@ hr:not([size]) {
 
 .unArticlePageActualites {
   width: 410px;
-  margin-bottom: 5vw;
+  margin-bottom: 5em;
   height: 35vw;
   display: flex;
   flex-direction: column;
@@ -795,4 +796,20 @@ hr:not([size]) {
 .backCreerMandat {
   margin-top: 7em;
   height: 49em;
+}
+
+.backMembreCreer {
+  padding-top: 6em;
+  padding-bottom: 4em;
+  display: block;
+}
+
+.test3{
+  justify-content: center;
+  align-items: center;
+}
+
+.backSupprimerMembe {
+  margin-top: 7em;
+  height: 48em;
 }

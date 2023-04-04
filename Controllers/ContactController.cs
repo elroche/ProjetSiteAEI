@@ -17,21 +17,22 @@ public class ContactController : Controller
 
     // GET: Contact/Create
     // Permet d'ajouter un contact grâce au formulaire
-    public IActionResult Create()
+    public IActionResult Creer()
     {
         return View();
     }
 
     // POST: Contact/Create
+    // Permet d'ajouter un contact grâce au formulaire
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Nom,Email,Numero,Objet,Message,Date")] Contact contact)
+    public async Task<IActionResult> Creer([Bind("Id,Nom,Email,Numero,Objet,Message,Date")] Contact contact)
     {
         if (ModelState.IsValid)
         {
             _context.Add(contact);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Create));
+            return RedirectToAction(nameof(Creer));
         }
         return View(contact);
     }

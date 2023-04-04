@@ -13,7 +13,8 @@ public class MandatController : Controller
     {
         _context = context;
     }
-
+    
+    // Page de tous les mandats des administrateurs
     [Authorize]
     public async Task<IActionResult> Index()
     {
@@ -21,6 +22,7 @@ public class MandatController : Controller
     }
 
     // GET: /Mandat/Supprimer/id
+    // Permet de supprimer le mandat associé à l'identifiant id
     [Authorize]
     public async Task<IActionResult> Supprimer(int? id)
     {
@@ -58,6 +60,7 @@ public class MandatController : Controller
     }
 
     // GET: Mandat/Modifier/id
+    // Permet de modifier le mandat associé à l'identifiant id
     [Authorize]    
     public async Task<IActionResult> Modifier(int? id)
     {
@@ -117,6 +120,7 @@ public class MandatController : Controller
     }
 
     // GET: Mandat/Creer
+    // Permet de creer un mandat
     [Authorize]
     public IActionResult Creer()
     {
@@ -138,6 +142,4 @@ public class MandatController : Controller
         }
         return View(mandat);
     }
-
-
 }

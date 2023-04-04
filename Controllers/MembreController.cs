@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using MvcAEI.Models;
 using MvcAEI.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
 
 
 public class MembreController : Controller
@@ -44,7 +46,7 @@ public class MembreController : Controller
     }
 
 
-    // Page L'équipe
+    // Page des membres pour les administrateurs
     [Authorize]
     [HttpGet("/Membre/IndexAdmin")]
     public IActionResult IndexAdmin()
@@ -56,26 +58,157 @@ public class MembreController : Controller
     }
 
 
-    // // GET: Membre/Create
-    // public IActionResult Create()
-    // {
-    //     var genres = Film.getNamesGenres();
-    //     ViewData["genres"] = genres;
-    //     return View();
-    // }
+    // GET: Membre/Creer
+    [Authorize]
+    public async Task<IActionResult> Creer()
+    {
+        var poles = Membre.getNamesPoles();
+        ViewData["poles"] = poles;
+        var roles = Membre.getNamesRoles();
+        ViewData["roles"] = roles;
+        var mandats = await _context.Mandats.OrderBy(m => m.Id).ToListAsync();
+        ViewData["MandatId"] = new SelectList(mandats, "Id", "Annee");
+        return View();
+    }
 
-    // // POST: Membre/Create
-    // // Permet de créer un membre
-    // [HttpPost]
-    // [ValidateAntiForgeryToken]
-    // public async Task<IActionResult> Create([Bind("Id,Nom,Realisateur,Resume,Genre,Date,Duree")] Film film)
-    // {
-    //     if (ModelState.IsValid)
-    //     {
-    //         _context.Add(film);
-    //         await _context.SaveChangesAsync();
-    //         return RedirectToAction(nameof(Index));
-    //     }
-    //     return View(film);
-    // }
+    // POST: Membre/Creer
+    // Permet de créer un membre
+    [Authorize]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Creer([Bind("Id,Nom,Prenom,Photo,Mot,Pole, Role, MandatId")] MembreDTO membreDTO)
+    {
+        Membre membre = new Membre(membreDTO);
+
+        var mandat = await _context.Mandats.Where(m => m.Id == membre.MandatId).SingleOrDefaultAsync();
+        membre.Mandat = mandat!;
+
+        if (ModelState.IsValid)
+        {
+            if (membre.Photo==null)
+            {
+                membre.Photo="/images/membres/anonyme.jpg";
+            }
+            _context.Add(membre);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(IndexAdmin));
+        }
+        return View(membre);
+    }
+
+
+
+    // GET: Membre/Modifier/id
+    // Permet de modifier le membre associée à l'identifiant id
+    [Authorize]
+    public async Task<IActionResult> Modifier(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+        var membre = await _context.Membres.Include(m => m.Mandat).Where(m => m.Id == id)
+               .SingleOrDefaultAsync();
+        var poles = Membre.getNamesPoles();
+        ViewData["poles"] = poles;
+        var roles = Membre.getNamesRoles();
+        ViewData["roles"] = roles;
+        var mandats = await _context.Mandats.OrderBy(m => m.Id).ToListAsync();
+        ViewData["MandatId"] = new SelectList(mandats, "Id", "Annee");
+
+        if (membre == null)
+        {
+            return NotFound();
+        }
+        return View(membre);
+    }
+
+    // POST: Membre/Modifier/id
+    // Permet de modifier le membre associée à l'identifiant id
+    [Authorize]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Modifier(int id, [Bind("Id,Nom,Prenom,Photo,Mot,Pole, Role, MandatId")] MembreDTO membreDTO)
+    {
+        if (id != membreDTO.Id)
+        {
+            return NotFound();
+        }
+
+        Membre membre = new Membre(membreDTO);
+
+        var mandat = _context.Mandats.Find(membre.MandatId);
+        membre.Mandat = mandat!;
+
+        if (ModelState.IsValid)
+        {
+            if (membre.Photo==null)
+            {
+                membre.Photo="/images/membres/anonyme.jpg";
+            }
+            try
+            {
+                _context.Update(membre);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(IndexAdmin));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!MembreExist(membre.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
+        return View(membre);
+    }
+
+    // Permet de vérifier l'existaence du membre associé à l'identifiant id
+    private bool MembreExist(int id)
+    {
+        return _context.Membres.Any(m => m.Id == id);
+    }
+
+
+    // GET: /Membre/Supprimer/id
+    // Permet de supprimer le membre associé à l'identifiant id
+    [Authorize]
+    public async Task<IActionResult> Supprimer(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+        var membre = await _context.Membres
+            .FirstOrDefaultAsync(m => m.Id == id);
+        if (membre == null)
+        {
+            return NotFound();
+        }
+        return View(membre);
+    }
+
+    // POST: /Membre/Supprimer/id
+    // Permet de supprimer le membre associé à l'identifiant id
+    [Authorize]
+    [HttpPost, ActionName("Supprimer")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        var membre = await _context.Membres.FindAsync(id);
+        if (membre == null)
+        {
+            return NotFound();
+        }
+        _context.Membres.Remove(membre);
+        await _context.SaveChangesAsync();
+
+        TempData["messageSuccess"] = "La suppression a bien été effectuée.";
+
+        return RedirectToAction(nameof(Index));
+    }
 }

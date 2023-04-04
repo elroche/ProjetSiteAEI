@@ -1,21 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MvcAEI.Models;
 
-public class Membre
-{
-    public int Id { get; set; }
-    public string? Nom { get; set; }
-    public string? Prenom { get; set; }
-    public string? Photo { get; set; }
-    public string? Mot {get;set;}
-    public Mandat? Mandat { get; set; }
-    public Pole? Pole { get; set; }
-    public Role? Role { get; set; }
-
-}
 
 public enum Pole
 {
@@ -97,4 +86,50 @@ public enum Role
 
     [Display(Name = "Chargé Commercial-Etude")]
     ChargeCommmercialEtude,
+}
+
+public class Membre
+{
+    public int Id { get; set; }
+    public string? Nom { get; set; }
+    public string? Prenom { get; set; }
+    public string? Photo { get; set; }
+    public string? Mot { get; set; }
+    public int? MandatId { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public Mandat? Mandat { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public Pole? Pole { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public Role? Role { get; set; }
+
+
+
+    public static string[] getNamesPoles()
+    {
+        return (Enum.GetNames(typeof(Pole)));
+    }
+
+    public static string[] getNamesRoles()
+    {
+        return (Enum.GetNames(typeof(Role)));
+    }
+
+    public Membre() { }
+
+    public Membre(MembreDTO dto)
+    {
+        Id = dto.Id;
+        Nom = dto.Nom;
+        Prenom = dto.Prenom;
+        Photo = dto.Photo;
+        Mot = dto.Mot;
+        Pole = dto.Pole;
+        Role = dto.Role;
+        MandatId = dto.MandatId;
+    }
+
 }

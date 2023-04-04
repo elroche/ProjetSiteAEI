@@ -13,6 +13,7 @@ public class CompetencesController : Controller
         _context = context;
     }
 
+    // Page competences
     public IActionResult Index()
     {
         return View();
