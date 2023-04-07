@@ -1,0 +1,30 @@
+﻿@model MvcAEI.Models.Paragraphe
+
+@{
+    ViewData["Title"] = "Supression d'un paragraphe";
+}
+
+<div class="backSupprimerMembe">
+    <h2 style="text-align:center; margin-bottom:10vw;">Suppression du paragraphe @Html.DisplayFor(model => model.Titre), de l'article @Html.DisplayFor(model => model.Article.Titre)</h2>
+
+    <div class="text-center" style="margin-bottom: 11em;">
+        <p class="text-danger">@ViewData["ErrorMessage"]</p>
+        <p>Etes vous sûr de vouloir supprimer ce paragraphe?</p>
+
+        <div class="row">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <input type="submit" value="Suppprimer" class="btn btn-danger" />
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="mt-5" style="margin-bottom: 36em;">
+        <a class="text-decoration-none" asp-action="Index"><i class="bi bi-arrow-left-circle-fill"></i> Retour à
+            la page précédente</a>
+    </div>
+
+</div>

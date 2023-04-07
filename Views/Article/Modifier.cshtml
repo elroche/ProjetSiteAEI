@@ -1,0 +1,62 @@
+﻿@model MvcAEI.Models.Article
+
+@{
+    ViewData["Title"] = "Modifier l'article";
+}
+
+<div class="backModifierMandat">
+    <h2 class="mb-5" style="text-align:center; color: #0C2764;">Modifier l'article @Html.DisplayFor(model => model.Titre)</h2>
+
+    <form asp-action="Modifier">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row justify-content-center">
+            <label asp-for="Titre" class="control-label" style="text-align: center;"></label>
+            <div class="col-sm-5">
+                <input asp-for="Titre" class="form-control" />
+                <span asp-validation-for="Titre" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label asp-for="Description" class="control-label" style="text-align: center;"></label>
+            <div class="col-sm-5">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label asp-for="Image" class="control-label" style="text-align: center;"></label>
+            <div class="col-sm-5">
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="text-align:center;">
+            <label asp-for="Date" class="control-label"></label>
+            <div class="col-sm-5">
+                <input type="date" asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <label asp-for="Editeur" class="control-label" style="text-align: center;"></label>
+            <div class="col-sm-5">
+                <input asp-for="Editeur" class="form-control" />
+                <span asp-validation-for="Editeur" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group text-center mt-4">
+            <input type="submit" value="Modifier" class="btn btn-primary" />
+        </div>
+    </form>
+    <div class="mt-5 pt-5 ml-5">
+        <a class="text-decoration-none" asp-action="IndexAdmin"><i
+            class="bi bi-arrow-left-circle-fill"></i> Retour à
+            la page précédente</a>
+    </div>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

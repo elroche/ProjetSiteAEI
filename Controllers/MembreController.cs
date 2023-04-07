@@ -59,6 +59,7 @@ public class MembreController : Controller
 
 
     // GET: Membre/Creer
+    // Permet de créer un membre
     [Authorize]
     public async Task<IActionResult> Creer()
     {
@@ -99,7 +100,7 @@ public class MembreController : Controller
 
 
     // GET: Membre/Modifier/id
-    // Permet de modifier le membre associée à l'identifiant id
+    // Permet de modifier le membre associé à l'identifiant id
     [Authorize]
     public async Task<IActionResult> Modifier(int? id)
     {
@@ -124,7 +125,7 @@ public class MembreController : Controller
     }
 
     // POST: Membre/Modifier/id
-    // Permet de modifier le membre associée à l'identifiant id
+    // Permet de modifier le membre associé à l'identifiant id
     [Authorize]
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -167,7 +168,7 @@ public class MembreController : Controller
         return View(membre);
     }
 
-    // Permet de vérifier l'existaence du membre associé à l'identifiant id
+    // Permet de vérifier l'existence du membre associé à l'identifiant id
     private bool MembreExist(int id)
     {
         return _context.Membres.Any(m => m.Id == id);

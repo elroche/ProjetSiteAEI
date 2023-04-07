@@ -1,0 +1,52 @@
+﻿@model MvcAEI.Models.Paragraphe
+
+@{
+    ViewData["Title"] = "Modifier le membre";
+}
+
+<div class="backMembreCreer">
+    <h2 class="mb-5" style="color:#0C2764; text-align:center; font-weight:bold;">Modifier le paragraphe : @Html.DisplayFor(model => model.Titre)</h2>
+    <h2 class="mb-5" style="color:#0C2764; text-align:center; font-weight:bold;">De l'article : @Html.DisplayFor(model => model.Article.Titre)</h2>
+    <form asp-action="Modifier">
+        <input type="hidden" asp-for="Id" />
+        <fieldset class="fieldset-style p-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row justify-content-center px-4 py-2">
+                <label asp-for="Titre" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Titre" class="form-control" />
+                    <span asp-validation-for="Titre" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Texte" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <textarea asp-for="Texte" class="form-control" name="Texte" cols="40" rows="5"></textarea>
+                    <span asp-validation-for="Texte" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Article" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <select asp-for="ArticleId" class="form-control" asp-items="ViewBag.ArticlesId"></select>
+                    <span asp-validation-for="ArticleId" class="text-danger"></span>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group text-center mt-4">
+            <input type="submit" value="Modifier" class="btn btn-primary" />
+        </div>
+    </form>
+
+    <div class="mt-5 pt-5 ml-5">
+        <a class="text-decoration-none" asp-action="Index"><i
+            class="bi bi-arrow-left-circle-fill"></i> Retour à
+            la page précédente</a>
+    </div>
+
+</div>
+
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

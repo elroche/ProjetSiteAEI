@@ -1,0 +1,28 @@
+﻿@model MvcAEI.Models.Article
+
+@{
+    ViewData["Title"] = "Supression d'un article";
+}
+
+<div class="supprimerMandat">
+    <h2 class="mb-5" style="text-align:center; color: #0C2764;">Suppression de l'article @Html.DisplayFor(model => model.Titre) </h2>
+    <div class="container">
+        <p class="text-danger">@ViewData["ErrorMessage"]</p>
+        <p class="text-center pb-3">Etes vous sûr de vouloir supprimer cet article ?</p>
+        <div class="text-center mb-5">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Supprimer" class="btn btn-danger" />
+                </div>
+            }
+        </div>
+        <div class="mt-5 pt-5">
+            <a class="text-decoration-none" asp-action="IndexAdmin"><i
+                    class="bi bi-arrow-left-circle-fill"></i> Retour à
+                la liste des articles</a>
+        </div>
+    </div>
+</div>

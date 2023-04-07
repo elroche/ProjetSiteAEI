@@ -40,18 +40,23 @@ public class MandatController : Controller
     }
 
     // POST: /Mandat/Supprimer/id
-    // Permet de supprimer la mandat associée à l'identifiant id
+    // Permet de supprimer le mandat associée à l'identifiant id
     [Authorize]
     [HttpPost, ActionName("Supprimer")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-        var mandat = await _context.Mandats.FindAsync(id);
+        var mandat = await _context.Mandats.Include(m => m.Membres).FirstOrDefaultAsync(m => m.Id == id);
         if (mandat == null)
         {
             return NotFound();
         }
+        // Supprimer tous les membres associés au mandat
+        _context.Membres.RemoveRange(mandat.Membres);
+    
+        // Ensuite, supprimer le mandat lui-même
         _context.Mandats.Remove(mandat);
+
         await _context.SaveChangesAsync();
 
         TempData["messageSuccess"] = "La suppression a bien été effectuée.";
@@ -99,7 +104,7 @@ public class MandatController : Controller
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!FilmExist(mandat.Id))
+                if (!MandatExist(mandat.Id))
                 {
                     return NotFound();
                 }
@@ -113,8 +118,8 @@ public class MandatController : Controller
         return View(mandat);
     }
 
-    // Permet de vérifier l'existaence du mandat associé à l'identifiant id
-    private bool FilmExist(int id)
+    // Permet de vérifier l'existence du mandat associé à l'identifiant id
+    private bool MandatExist(int id)
     {
         return _context.Mandats.Any(m => m.Id == id);
     }

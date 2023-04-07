@@ -813,3 +813,7 @@ hr:not([size]) {
   margin-top: 7em;
   height: 48em;
 }
+
+.backParagrapheIndex{
+  margin-top: 5em;
+}
