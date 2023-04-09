@@ -92,6 +92,7 @@ public class MembreController : Controller
             }
             _context.Add(membre);
             await _context.SaveChangesAsync();
+            TempData["messageSuccess"] = "La création du membre a bien été effectuée.";
             return RedirectToAction(nameof(IndexAdmin));
         }
         return View(membre);
@@ -151,6 +152,7 @@ public class MembreController : Controller
             {
                 _context.Update(membre);
                 await _context.SaveChangesAsync();
+                TempData["messageSuccess"] = "La modification du membre a bien été effectuée.";
                 return RedirectToAction(nameof(IndexAdmin));
             }
             catch (DbUpdateConcurrencyException)
@@ -208,8 +210,8 @@ public class MembreController : Controller
         _context.Membres.Remove(membre);
         await _context.SaveChangesAsync();
 
-        TempData["messageSuccess"] = "La suppression a bien été effectuée.";
+        TempData["messageSuccess"] = "La suppression du membre a bien été effectuée.";
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(IndexAdmin));
     }
 }

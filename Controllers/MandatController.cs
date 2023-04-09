@@ -59,9 +59,9 @@ public class MandatController : Controller
 
         await _context.SaveChangesAsync();
 
-        TempData["messageSuccess"] = "La suppression a bien été effectuée.";
+        TempData["messageSuccess"] = "La suppression du mandat a bien été effectuée.";
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof( Index));
     }
 
     // GET: Mandat/Modifier/id
@@ -101,6 +101,8 @@ public class MandatController : Controller
             {
                 _context.Update(mandat);
                 await _context.SaveChangesAsync();
+                TempData["messageSuccess"] = "La modification du mandat a bien été effectuée.";
+
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -143,6 +145,7 @@ public class MandatController : Controller
         {
             _context.Add(mandat);
             await _context.SaveChangesAsync();
+            TempData["messageSuccess"] = "La création du mandat a bien été effectuée.";
             return RedirectToAction(nameof(Index));
         }
         return View(mandat);

@@ -4,6 +4,14 @@
     ViewData["Title"] = "Formulaire de contact";
 }
 <div class="backContact">
+
+    @if (@TempData["messageSuccess"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["messageSuccess"]
+        </div>
+    }
+    
     <div class="titreContact">
         <h2><span style="color:white">Nous </span>contacter</h2>
         <hr class="hrBlanc">

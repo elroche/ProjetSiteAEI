@@ -75,6 +75,7 @@ public class ArticleController : Controller
         {
             _context.Add(article);
             await _context.SaveChangesAsync();
+            TempData["messageSuccess"] = "La création de l'article a bien été effectuée.";
             return RedirectToAction(nameof(IndexAdmin));
         }
         return View(article);
@@ -122,6 +123,7 @@ public class ArticleController : Controller
             {
                 _context.Update(article);
                 await _context.SaveChangesAsync();
+                TempData["messageSuccess"] = "La modification de l'article a bien été effectuée.";
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -183,7 +185,7 @@ public class ArticleController : Controller
     
         await _context.SaveChangesAsync();
 
-        TempData["messageSuccess"] = "La suppression a bien été effectuée.";
+        TempData["messageSuccess"] = "La suppression de l'article a bien été effectuée.";
 
         return RedirectToAction(nameof(IndexAdmin));
     }

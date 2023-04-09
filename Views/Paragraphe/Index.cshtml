@@ -4,10 +4,18 @@
 }
 
 <div class="backParagrapheIndex">
-    <a class="btn btn-dark ml-5" asp-controller="Paragraphe" asp-action="Creer"><i class="bi bi-plus-circle"></i> Ajouter un
+
+    @if (@TempData["messageSuccess"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["messageSuccess"]
+        </div>
+    }
+
+    <a class="btn btn-dark mt-3 ml-5" asp-controller="Paragraphe" asp-action="Creer"><i class="bi bi-plus-circle"></i> Ajouter un
         paragraphe</a>
     <div class="titrePageActualites" style="color:#0C2764;">
-        <h2>Paragraphes</h2>
+        <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Paragraphes</h1>
         <hr class="hrNoirTitreActualités">
     </div>
     <div class="px-4">

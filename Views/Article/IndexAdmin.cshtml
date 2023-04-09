@@ -3,7 +3,15 @@
     ViewData["Title"] = "Les Actualités";
 }
 
-<div class="backActualités">
+<div class="backActualitésAdmin">
+    
+    @if (@TempData["messageSuccess"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["messageSuccess"]
+        </div>
+    }
+
     <div class="titrePageActualites">
         <h2>Actualités</h2>
         <hr class="hrNoirTitreActualités">

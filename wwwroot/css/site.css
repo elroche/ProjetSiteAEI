@@ -601,7 +601,7 @@ hr:not([size]) {
 
 
 .backEquipe {
-  margin-top: 5em;
+  margin-top: 3.7em;
   margin-bottom: 8vw;
 }
 
@@ -678,6 +678,11 @@ hr:not([size]) {
 
 .backActualités {
   margin-top: 5rem;
+  padding-bottom: 4vw;
+}
+
+.backActualitésAdmin {
+  margin-top: 3.7em;
   padding-bottom: 4vw;
 }
 
@@ -778,7 +783,7 @@ hr:not([size]) {
 
 
 .backMandatIndex {
-  margin-top: 7em;
+  margin-top: 3.7em;
   margin-bottom: 5em;
 }
 
@@ -804,16 +809,23 @@ hr:not([size]) {
   display: block;
 }
 
-.test3{
-  justify-content: center;
-  align-items: center;
-}
-
 .backSupprimerMembe {
   margin-top: 7em;
   height: 48em;
 }
 
 .backParagrapheIndex{
-  margin-top: 5em;
+  margin-top: 3.7em;
+}
+
+.backUnContact {
+  padding-top: 5em;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.titreContactPageDetailContact {
+  color: #3369E7;
+  text-align: center;
+  margin-bottom: 2em;
 }

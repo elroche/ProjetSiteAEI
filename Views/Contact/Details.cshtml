@@ -1,0 +1,23 @@
+﻿@model MvcAEI.Models.Contact
+@{
+    ViewData["Title"] = "Le contact";
+}
+
+<div class="backUnContact">
+    <h2 class="titreContactPageDetailContact">Message de @Html.DisplayFor(model => model.Nom)</h2>
+    <div class="sousTitreContactPageDetailContact mt-3">
+        <p><span style="font-weight:bold;">Adresse e-mail : </span> @Html.DisplayFor(model => model.Email)</p>
+        <p><span style="font-weight:bold;">Numéro de téléphone : </span>@Html.DisplayFor(model => model.Numero)</p>
+        <p><span style="font-weight:bold;">Date : </span> @Html.DisplayFor(model => model.Date)</p>
+    </div>
+    <p><span style="font-weight:bold;">Objet : </span>@Html.DisplayFor(model => model.Objet)</p>
+    <p style="font-weight:bold;">Message : </p> 
+    <p style="white-space: pre-wrap;">@Html.DisplayFor(model => model.Message)</p>
+
+</div>
+
+    <div class="mt-5 pt-5 ml-5" style="padding-bottom: 19em;">
+        <a class="text-decoration-none" asp-action="Index"><i
+            class="bi bi-arrow-left-circle-fill"></i> Retour à
+            la page précédente</a>
+    </div>

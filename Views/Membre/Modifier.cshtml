@@ -4,85 +4,83 @@
     ViewData["Title"] = "Modifier le membre";
 }
 
-<h2 class="mb-5">Modifier le membre @Html.DisplayFor(model => model.Prenom) @Html.DisplayFor(model => model.Nom)</h2>
-<form asp-action="Modifier">
-    <input type="hidden" asp-for="Id" />
-    <fieldset class="fieldset-style p-3">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group row px-4 py-2">
-            <div class="col-sm-4">
-                <label asp-for="Nom" class="control-label"></label>
+<div class="backMembreCreer">
+    <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Modifier le membre @Html.DisplayFor(model => model.Prenom) @Html.DisplayFor(model => model.Nom)</h1>
+    <form asp-action="Modifier">
+        <input type="hidden" asp-for="Id" />
+        <fieldset class="fieldset-style p-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Nom" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Nom" class="form-control" />
+                    <span asp-validation-for="Nom" class="text-danger"></span>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <input asp-for="Nom" class="form-control" />
-                <span asp-validation-for="Nom" class="text-danger"></span>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Prenom" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Prenom" class="form-control" />
+                    <span asp-validation-for="Prenom" class="text-danger"></span>
+                </div>
             </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Photo" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Photo" class="form-control" />
+                    <span asp-validation-for="Photo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Mot" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <textarea asp-for="Mot" class="form-control" name="Mot" cols="40" rows="5"></textarea>
+                    <span asp-validation-for="Mot" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Mandat" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <select asp-for="MandatId" class="form-control" asp-items="ViewBag.MandatId"></select>
+                    <span asp-validation-for="MandatId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Pole" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <select class="form-control" name="Pole">
+                        @foreach (var pole in (string[])ViewData["poles"])
+                        {
+                            <option asp-for="Pole" value="@pole">@pole</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Pole" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row justify-content-center py-2">
+                <label asp-for="Role" class="control-label" style="text-align: center;"></label>
+                <div class="col-sm-6">
+                    <select class="form-control" name="Role">
+                        @foreach (var role in (string[])ViewData["roles"])
+                        {
+                            <option asp-for="Role" value="@role">@role</option>
+                        }
+                    </select>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group text-center mt-4">
+            <input type="submit" value="Modifier" class="btn btn-primary" />
         </div>
-        <div class="form-group row px-4 py-2">
-            <div class="col-sm-4">
-                <label asp-for="Prenom" class="control-label"></label>
-            </div>
-            <div class="col-sm-6">
-                <input asp-for="Prenom" class="form-control" />
-                <span asp-validation-for="Prenom" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group row px-4 py-2">
-            <div class="col-sm-4">
-                <label asp-for="Photo" class="control-label"></label>
-            </div>
-            <div class="col-sm-6">
-                <input asp-for="Photo" class="form-control" />
-                <span asp-validation-for="Photo" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group row justify-content-center py-2">
-            <label asp-for="Mot" class="control-label" style="text-align: center;"></label>
-            <div class="col-sm-6">
-                <textarea asp-for="Mot" class="form-control" name="Mot" cols="40" rows="5"></textarea>
-                <span asp-validation-for="Mot" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group row justify-content-center py-2">
-            <label asp-for="Mandat" class="control-label" style="text-align: center;"></label>
-            <div class="col-sm-6">
-                <select asp-for="MandatId" class="form-control" asp-items="ViewBag.MandatId"></select>
-                <span asp-validation-for="MandatId" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group row justify-content-center py-2">
-            <label asp-for="Pole" class="control-label" style="text-align: center;"></label>
-            <div class="col-sm-6">
-                <select class="form-control" name="Pole">
-                    @foreach (var pole in (string[])ViewData["poles"])
-                    {
-                        <option asp-for="Pole" value="@pole">@pole</option>
-                    }
-                </select>
-                <span asp-validation-for="Pole" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="form-group row justify-content-center py-2">
-            <label asp-for="Role" class="control-label" style="text-align: center;"></label>
-            <div class="col-sm-6">
-                <select class="form-control" name="Role">
-                    @foreach (var role in (string[])ViewData["roles"])
-                    {
-                        <option asp-for="Role" value="@role">@role</option>
-                    }
-                </select>
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>
-        </div>
-    </fieldset>
-    <div class="form-group text-center mt-4">
-        <input type="submit" value="Modifier" class="btn btn-primary" />
-    </div>
-</form>
+    </form>
 
-<div>
-    <a class="text-decoration-none" asp-action="Index"><i class="bi bi-arrow-left-circle-fill"></i> Retour à
-        la page précédente</a>
+    <div class="mt-5 pt-5 ml-5">
+        <a class="text-decoration-none" asp-action="IndexAdmin"><i
+            class="bi bi-arrow-left-circle-fill"></i> Retour à
+            la page précédente</a>
+    </div>
+
 </div>
 
 

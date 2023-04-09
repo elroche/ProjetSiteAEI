@@ -25,6 +25,7 @@ public class ParagrapheController : Controller
     }
 
     //Page détails d'un paragraphe
+    [Authorize]
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null)
@@ -73,6 +74,7 @@ public class ParagrapheController : Controller
         {
             _context.Add(paragraphe);
             await _context.SaveChangesAsync();
+            TempData["messageSuccess"] = "La création du paragraphe a bien été effectuée.";
             return RedirectToAction(nameof(Index));
         }
         return View(paragraphe);
@@ -122,6 +124,7 @@ public class ParagrapheController : Controller
             {
                 _context.Update(paragraphe);
                 await _context.SaveChangesAsync();
+                TempData["messageSuccess"] = "La modification du paragraphe a bien été effectuée.";
                 return RedirectToAction(nameof(Index));
             }
             catch (DbUpdateConcurrencyException)
@@ -180,7 +183,7 @@ public class ParagrapheController : Controller
         _context.Paragraphes.Remove(paragraphe);
         await _context.SaveChangesAsync();
 
-        TempData["messageSuccess"] = "La suppression a bien été effectuée.";
+        TempData["messageSuccess"] = "La suppression du paragraphe a bien été effectuée.";
 
         return RedirectToAction(nameof(Index));
     }

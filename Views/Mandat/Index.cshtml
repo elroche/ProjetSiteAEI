@@ -4,14 +4,15 @@
     ViewData["Title"] = "Les Mandats";
 }
 
-@if (@TempData["messageSuccess"] != null)
-{
-    <div class="alert alert-success" role="alert">
-        @TempData["messageSuccess"]
-    </div>
-}
-
 <div class="backMandatIndex">
+
+    @if (@TempData["messageSuccess"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["messageSuccess"]
+        </div>
+    }
+
     <h2 class="mb-5" style="color: #0C2764; text-align:center;">Les Mandats</h2>
     <a class="btn btn-dark ml-5" asp-controller="Mandat" asp-action="Creer"><i class="bi bi-plus-circle"></i> Ajouter un
         Mandat</a>

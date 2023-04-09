@@ -5,7 +5,7 @@
 }
 
 <div class="backSupprimerMembe">
-    <h2 style="text-align:center; margin-bottom:10vw;">Suppression du membre @Html.DisplayFor(model => model.Prenom) @Html.DisplayFor(model => model.Nom)</h2>
+    <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Suppression du membre @Html.DisplayFor(model => model.Prenom) @Html.DisplayFor(model => model.Nom)</h1>
 
     <div class="text-center" style="margin-bottom: 11em;">
         <p class="text-danger">@ViewData["ErrorMessage"]</p>
@@ -22,8 +22,9 @@
         </div>
     </div>
 
-    <div class="mt-5" style="margin-bottom: 36em;">
-        <a class="text-decoration-none" asp-action="IndexAdmin"><i class="bi bi-arrow-left-circle-fill"></i> Retour à
+    <div class="mt-5 pt-5 ml-5">
+        <a class="text-decoration-none" asp-action="IndexAdmin"><i
+            class="bi bi-arrow-left-circle-fill"></i> Retour à
             la page précédente</a>
     </div>
 

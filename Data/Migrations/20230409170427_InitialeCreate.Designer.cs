@@ -11,8 +11,8 @@ using MvcAEI.Data;
 namespace MvcAEI.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230331082609_Create2")]
-    partial class Create2
+    [Migration("20230409170427_InitialeCreate")]
+    partial class InitialeCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
