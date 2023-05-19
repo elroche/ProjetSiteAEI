@@ -5,6 +5,7 @@ using MvcAEI.Models;
 
 namespace MvcAEI.Data;
 
+//Création de la base de donnée
 public class ApplicationDbContext : IdentityDbContext
 {
     public DbSet<Article> Articles { get; set; } = null!;

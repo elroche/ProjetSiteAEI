@@ -5,21 +5,26 @@
 }
 
 <div class="supprimerMandat">
+    <!-- Titre de la page avec le titre de l'article -->
     <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Suppression de l'article @Html.DisplayFor(model => model.Titre) </h1>
     <div class="container">
+        <!-- Affichage d'un message d'erreur s'il est présent dans ViewData -->
         <p class="text-danger">@ViewData["ErrorMessage"]</p>
         <p class="text-center pb-3">Etes vous sûr de vouloir supprimer cet article ?</p>
         <div class="text-center mb-5">
+            <!-- Formulaire pour soumettre la suppression de l'article -->
             @using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
 
                 <div class="form-actions no-color">
+                    <!-- Bouton pour confirmer la suppression -->
                     <input type="submit" value="Supprimer" class="btn btn-danger" />
                 </div>
             }
         </div>
         <div class="mt-5 pt-5">
+            <!-- Lien pour revenir à la liste des articles -->
             <a class="text-decoration-none" asp-action="IndexAdmin"><i
                     class="bi bi-arrow-left-circle-fill"></i> Retour à
                 la liste des articles</a>

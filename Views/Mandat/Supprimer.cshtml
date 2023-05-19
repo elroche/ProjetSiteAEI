@@ -5,8 +5,10 @@
 }
 
 <div class="supprimerMandat">
+    <!-- Titre de la page-->
     <h2 class="mb-5" style="text-align:center; color: #0C2764;">Suppression du mandat @Html.DisplayFor(model => model.Annee) </h2>
     <div class="container">
+        <!-- Message pour confirmer la suppression d'un mandat-->
         <p class="text-danger">@ViewData["ErrorMessage"]</p>
         <p class="text-center pb-3">Etes vous sûr de vouloir supprimer ce mandat?</p>
         <div class="text-center mb-5">
@@ -14,11 +16,13 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-actions no-color">
+                    <!-- Bouton pour supprimer le mandat -->
                     <input type="submit" value="Supprimer" class="btn btn-danger" />
                 </div>
             }
         </div>
         <div class="mt-5 pt-5">
+            <!-- Bouton pour revenir à la page précédente-->
             <a class="text-decoration-none" asp-action="Index"><i
                     class="bi bi-arrow-left-circle-fill"></i> Retour à
                 la liste des mandats</a>

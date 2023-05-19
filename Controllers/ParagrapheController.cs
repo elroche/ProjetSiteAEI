@@ -13,7 +13,6 @@ public class ParagrapheController : Controller
     {
         _context = context;
     }
-
     
     // Page des paragraphes pour les administrateurs
     [Authorize]

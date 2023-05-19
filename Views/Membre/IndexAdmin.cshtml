@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Les mandats";
 }
-
+<!-- Même fonctionnement que la page Index de Mmebre -->
 <div class="backEquipe">
     
     @if (@TempData["messageSuccess"] != null)
@@ -36,14 +36,15 @@
                                     <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                                     <div class="descriptionMembre">
                                         <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                            <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                            <div class="motMembresEquipe">
-                                                <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                                <div style="margin: auto;">
-                                                    <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
-                                                    <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
-                                                </div>
-                                            </div>
+                                        <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                        <div class="motMembresEquipe">
+                                        <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                        <div style="margin: auto;">
+                                            <!-- Bouton de modification et suppression du membre -->
+                                            <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
+                                            <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
                             }
@@ -60,14 +61,14 @@
                                     <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                                     <div class="descriptionMembre">
                                         <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                            <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                            <div class="motMembresEquipe">
-                                                <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                                <div style="margin: auto;">
-                                                    <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
-                                                    <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
-                                                </div>
+                                        <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                        <div class="motMembresEquipe">
+                                            <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                            <div style="margin: auto;">
+                                                <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
+                                                <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             }
@@ -84,14 +85,14 @@
                                     <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                                     <div class="descriptionMembre">
                                         <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                            <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                            <div class="motMembresEquipe">
-                                                <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                                <div style="margin: auto;">
-                                                    <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
-                                                    <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
-                                                </div>
+                                        <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                        <div class="motMembresEquipe">
+                                            <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                            <div style="margin: auto;">
+                                                <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
+                                                <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             }
@@ -107,14 +108,14 @@
                                     <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                                     <div class="descriptionMembre">
                                         <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                            <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                            <div class="motMembresEquipe">
-                                                <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                                <div style="margin: auto;">
-                                                    <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
-                                                    <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
-                                                </div>
+                                        <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                        <div class="motMembresEquipe">
+                                            <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                            <div style="margin: auto;">
+                                                <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1" style="font-size: 1vw;">Modifier</a>
+                                                <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1"  style="font-size: 1vw;">Supprimer</a>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             }
@@ -467,6 +468,5 @@
             </div>
         </div>
     }
-
 </div>
 

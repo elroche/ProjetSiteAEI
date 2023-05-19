@@ -5,9 +5,11 @@
 }
 
 <div class="backSupprimerMembe">
+    <!-- Titre de la page-->
     <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Suppression du paragraphe @Html.DisplayFor(model => model.Titre), de l'article @Html.DisplayFor(model => model.Article.Titre)</h1>
 
     <div class="text-center" style="margin-bottom: 11em;">
+        <!-- Message pour confirmer la suppression -->
         <p class="text-danger">@ViewData["ErrorMessage"]</p>
         <p>Etes vous sûr de vouloir supprimer ce paragraphe?</p>
 
@@ -16,6 +18,7 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-actions no-color">
+                    <!-- Bouton de suppression du paragraphe -->
                     <input type="submit" value="Suppprimer" class="btn btn-danger" />
                 </div>
             }
@@ -23,6 +26,7 @@
     </div>
 
     <div class="mt-5 pt-5 ml-5">
+        <!-- Bouton de retour àn la page précédente -->
         <a class="text-decoration-none" asp-action="IndexAdmin"><i
             class="bi bi-arrow-left-circle-fill"></i> Retour à
             la page précédente</a>

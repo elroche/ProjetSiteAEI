@@ -5,13 +5,14 @@
 
 <div class="backParagrapheIndex">
 
+    <!-- Message de succes si création d un paragraphe -->
     @if (@TempData["messageSuccess"] != null)
     {
         <div class="alert alert-success" role="alert">
             @TempData["messageSuccess"]
         </div>
     }
-
+    <!-- Bouton de création  d'un paragraphe -->
     <a class="btn btn-dark mt-3 ml-5" asp-controller="Paragraphe" asp-action="Creer"><i class="bi bi-plus-circle"></i> Ajouter un
         paragraphe</a>
     <div class="titrePageActualites" style="color:#0C2764;">
@@ -20,13 +21,16 @@
     </div>
     <div class="px-4">
         <div class="row">
+            <!-- Vérification de l'existence de paragraphe -->
             @if (Model.Count() > 0)
             {
                 foreach (var item in Model)
                 {
                     <div style="text-align: center; margin-bottom:3em;">
                         <div style="margin-bottom: 0;">
+                            <!-- Titre de l'aricle -->
                             <p style="font-size: 1.7em; font-weight:bold; color:#0C2764;">Titre de l'article : @Html.DisplayFor(modelItem => item.Article.Titre)</p>
+                            <!-- Verificationd e l'existence d'un titre du paragraphe -->
                             @if(item.Titre!=null)
                             {
                                 <p style="font-size: 1.3em; font-weight:bold; color:#258cfb;">Titre du paragraphe : @Html.DisplayFor(modelItem => item.Titre)</p>
@@ -35,8 +39,10 @@
                             {
                                 <p style="font-size: 1.3em; font-weight:bold; color:#258cfb;">Ce paragraphe n'a pas de titre</p>
                             }
+                            <!-- Texte du paragraphe -->
                             <p style="text-align: justify; white-space: pre-wrap;">@Html.DisplayFor(modelItem => item.Texte)</p>
                             <div style="margin: auto;">
+                                <!-- Boutons de modification et suppression du paragraphe-->
                                 <a asp-action="Modifier" asp-route-id="@item.Id" class="btn btn-primary btn-sm mb-1 ml-1 mr-1">Modifier</a>
                                 <a asp-action="Supprimer" asp-route-id="@item.Id" class="btn btn-danger btn-sm mb-1 ml-1 mr-1">Supprimer</a>
                             </div>

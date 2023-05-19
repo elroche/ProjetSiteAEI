@@ -5,8 +5,6 @@ using MvcAEI.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-
-
 public class MembreController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -97,7 +95,6 @@ public class MembreController : Controller
         }
         return View(membre);
     }
-
 
 
     // GET: Membre/Modifier/id

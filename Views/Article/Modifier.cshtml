@@ -5,11 +5,15 @@
 }
 
 <div class="backModifierMandat">
+    <!-- Titre de la page avec le titre de l'article -->
     <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Modifier l'article @Html.DisplayFor(model => model.Titre)</h1>
 
     <form asp-action="Modifier">
+        <!-- Zone d'affichage des erreurs de validation -->
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <!-- Champ caché pour l'ID de l'article -->
         <input type="hidden" asp-for="Id" />
+        <!-- Répétition des blocs similaires pour les autres propriétés de l'article -->
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group row justify-content-center">
             <label asp-for="Titre" class="control-label" style="text-align: center;"></label>
@@ -51,6 +55,7 @@
         </div>
     </form>
     <div class="mt-5 pt-5 ml-5">
+        <!-- Lien pour revenir à la page précédente -->
         <a class="text-decoration-none" asp-action="IndexAdmin"><i
             class="bi bi-arrow-left-circle-fill"></i> Retour à
             la page précédente</a>
@@ -58,5 +63,6 @@
 </div>
 
 @section Scripts {
+<!-- Inclusion des scripts de validation -->
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

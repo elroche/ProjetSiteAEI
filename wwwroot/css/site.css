@@ -279,11 +279,6 @@ hr:not([size]) {
   width: 100%;
 }
 
-.test {
-  position:relative;
-  color: red;
-}
-
 .text4 {
   color:#3369E7;
   font-size: 3vw;

@@ -4,15 +4,21 @@
 }
 
 <div class="backUneActualite">
+    <!-- Affichage du titre de l'article -->
     <p class="titreArticlePageDetailActualite">@Html.DisplayFor(model => model.Titre)</p>
     <div class="sousTitreArticlePageDetailActualite">
+        <!-- Affichage de l'éditeur et de la date de l'article -->
         <p>@Html.DisplayFor(model => model.Editeur), @Html.DisplayFor(model => model.Date)</p>
     </div>
+    <!-- Affichage de l'image de l'actualité -->
     <img class="imagesArticlePageDetailsActualite" alt="image de l'actualité" src=@Html.DisplayFor(model => model.Image)></img>
-    
+
+    <!-- Boucle pour afficher les paragraphes de l'article -->
     @foreach (var paragraphe in Model.Paragraphes)
-        {
-            <p class="titreParagrapheArticle">@Html.DisplayFor(modelItem => paragraphe.Titre)</p>
-            <p class="texteParagrapheArticle">@paragraphe.Texte</p>
-        }
+    {
+        <!-- Affichage du titre du paragraphe -->
+        <p class="titreParagrapheArticle">@Html.DisplayFor(modelItem => paragraphe.Titre)</p>
+        <!-- Affichage du paragraphe -->
+        <p class="texteParagrapheArticle">@paragraphe.Texte</p>
+    }
 </div>

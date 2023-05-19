@@ -5,20 +5,25 @@
  }
 
 <div class="back">
+    <!-- Image de fond -->
     <img src="https://enseirb-matmeca.bordeaux-inp.fr/sites/default/files/styles/image_droite/public/upload/page-edito/enseirb_matmeca/img/enseirb_matmeca.jpg?itok=TnlRzZ4-"
         style="width:100%" alt="photoEnseirb" />
+    <!-- Cadre sur l'image de fond -->
     <div class="cadre">
         <p class="big">Aquitaine Electronique Informatique</p>
         <p>Dynamisme &emsp; Qualité &emsp; Engagement</p>
     </div>
     <div class="buttons">
         <div class="d-flex justify-content-around">
+            <!-- Bouton pour nous contacter -->
             <a asp-controller="Contact" asp-action="Creer" class="buttonAccueil" role="button" aria-pressed="true">Nous contacter</a>
+            <!-- Bouton pour télécharger notre plaquette -->
             <a href="/images/Flyer_AEI.pdf" class="buttonAccueil" role="button" aria-pressed="true">Notre
                 plaquette</a>
         </div>
     </div>
 
+    <!-- Cadre des chiffres -->
     <div class="quelquesChiffres border-top border-dark border-1">
         <div class="text2">
             <p><span style="color:#3369E7">Quelques </span>chiffres...</p>
@@ -39,6 +44,7 @@
         </div>
     </div>
 
+    <!-- Cadre des compétences -->
     <div class="nosCompetences">
         <div class="nosCompetencesTitre border-top border-dark border-1">
             <div class="text2">
@@ -48,6 +54,7 @@
         </div>
         <div id="carouselControls1" class="carousel slide carou" data-bs-ride="carousel">
             <div class="carousel-inner">
+                <!-- Compétence : développement -->
                 <div class="carousel-item active">
                     <div class="container">
                         <div class="row">
@@ -69,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Compétence : Calcul et analyse du numérique -->
                 <div class="carousel-item">
                     <div class="container">
                         <div class="row">
@@ -90,6 +98,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Compétence : Électronique et Robotique -->
                 <div class="carousel-item">
                     <div class="container">
                         <div class="row">
@@ -111,6 +120,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Compétence : Télécommunications -->
                 <div class="carousel-item">
                     <div class="container">
                         <div class="row">
@@ -131,84 +141,107 @@
                     </div>
                 </div>
             </div>
+            <!-- Bouton pour voir la compétence précédente -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
+            <!-- Bouton pour voir la compétence suivante -->
             <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
 
+        <!-- Bouton pour afficher la page des compétences-->
         <div class="barreBleue">
             <a asp-controller="Competences" asp-action="Index" class="enSavoirPlus" role="button" aria-pressed="true">En savoir plus</a>
         </div>  
 
     </div>
 
+    <!-- Cadre : ils nous ont fait confiance -->
     <div class="confiance">
         <div class="text3">
             <p><span style="color:#3369E7">Ils nous ont fait </span>confiance...</p>
             <hr class="hrBleu">
         </div>
 
+        <!-- Logos des partenaires -->
         <div id="carouselControls2" class="carousel slide carou2" data-bs-ride="carousel">
             <div class="carousel-inner">
+                <!-- Première ligne de logos -->
                 <div class="carousel-item active">
                     <div class="container">
                         <div class="row d-flex align-items-center logosConfiance">
+                            <!-- Logo 1 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/ea/Mcdonalds_France_2009_logo.svg/853px-Mcdonalds_France_2009_logo.svg.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Logo_ENSEIRB-MATMECA-Bordeaux_INP.svg/2560px-Logo_ENSEIRB-MATMECA-Bordeaux_INP.svg.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
+                            <!-- Logo 2 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Logo_ensc_2021.svg/2560px-Logo_ensc_2021.svg.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
+                            <!-- Logo 3 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://www.pngplay.com/wp-content/uploads/9/KFC-Logo-PNG-Free-File-Download.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/fr/1/14/LOGO_ENSMAC.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
+                            <!-- Logo 4 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/2036px-Domino%27s_pizza_logo.svg.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/fr/3/38/Logo_toulouse_inp_ensiacet_2022.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Seconde ligne de logos -->
                 <div class="carousel-item">
                     <div class="container">
                         <div class="row d-flex align-items-center logosConfiance">
+                            <!-- Logo 1 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://play-lh.googleusercontent.com/9J22CNSvSu3DB2zSu1lAMBudDZiWYRFuF4NPquRA7Y7Vc425FC7e07wWmuWskozq1M0"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Logo_inp_2022.svg/1200px-Logo_inp_2022.svg.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
+                            <!-- Logo 2 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Logo_Buffalo_Grill.png/800px-Logo_Buffalo_Grill.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://brafitec2014.ipb.fr/sites/default/files/upload/Logos/logo_prepa_2015_bordeaux_web_1.png"
                                         class="logoConfiance">
                                 </div>  
                             </div>
+                            <!-- Logo 3 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://www.business-directory.fr/wp-content/uploads/2022/12/logo-starbucks-coffee.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/fr/6/63/Groupe_inp_2022.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
+                            <!-- Logo 4 -->
                             <div class="col-3">
                                 <div>
-                                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c9/Otacos_logo.svg/1200px-Otacos_logo.svg.png"
+                                    <!-- Lien du logo-->
+                                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/2/22/Grenoble_INP_%28logo%29.svg/2560px-Grenoble_INP_%28logo%29.svg.png"
                                         class="logoConfiance">
                                 </div>
                             </div>
@@ -216,10 +249,12 @@
                     </div>
                 </div>
             </div>
+            <!-- Bouton pour voir les logos précédents -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
+            <!-- Bouton pour voir les logos suivants -->
             <button class="carousel-control-next" type="button" data-bs-target="#carouselControls2" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -227,24 +262,34 @@
         </div>
     </div>
 
+    <!-- Cadre des actuailtés (seule les 3 dernières actualités sont affichées ) -->
     <div class="actualites">
+        <!-- Image de fond -->
         <img src="/images/actualites.png" class="imageActualites">
         <div class="text4">
+            <!-- Titre de la section -->
             <p><span style="color:white">Nos </span>Actualités</p>
+            <!-- Ligne séparatrice -->
             <hr class="hrBleu">
         </div>
         <div class="row lesActualites">
+            <!-- Vérification de l'existance d'actualités -->
             @if (Model.Count() > 0)
             {
+                <!-- Boucle pour afficher les 3 actualités -->
                 foreach (var item in Model)
                     {
                         <div style="width: 33%;">
                             <div class="cadre4">
+                                <!-- Image de l'actualité -->
                                 <img src=@Html.DisplayFor(modelItem => item.Image)
                                     class="imageActualites2">
                                 <div class="descriptionActualites">
+                                    <!-- Titre de l'actualité -->
                                     <p class="titreActualites">@Html.DisplayFor(modelItem => item.Titre)</p>
+                                    <!-- Description de l'actualité -->
                                     <p class="resumeActualites">@Html.DisplayFor(modelItem => item.Description)</p>
+                                    <!-- Bouton pour voir toute l'actualité -->
                                     <a asp-controller="Article" asp-action="Details" asp-route-id="@item.Id"  class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
                                 </div>
                             </div>                        
@@ -252,11 +297,13 @@
                     }
             }
         </div>
+        <!-- Bouton pour voir la page des actualités-->
         <a asp-controller="Article" class="tousNosArticles" role="button" aria-pressed="true">Voir tous nos articles</a>
     </div>
 
     <div class="contacter">
         <img src="/images/equipe.jpg" class="imageEquipe">
+        <!-- Bouton pour aller sur la page Nous contacter-->
         <a asp-controller="Contact" asp-action="Creer" class="nousContacter" role="button" aria-pressed="true">Nous contacter</a>
     </div>
 </div>

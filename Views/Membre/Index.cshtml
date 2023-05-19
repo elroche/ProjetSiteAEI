@@ -7,6 +7,7 @@
 <div class="backEquipe">
 
     <div class="formulaireSelectionMandat">
+        <!-- Liste de séléction du mandat à afficher-->
         <form asp-controller="Membre" asp-action="Index">
             <p>Mandat :
                 <select class="selectMembres mb-3 px-5 py-1" name="id">
@@ -20,26 +21,31 @@
         </form>
     </div>
 
-
     <div class="px-4">
         <div class="row p-0 m-0">
+            <!-- Vérification de la présence de mmbre-->
             @if (Model.Count() > 0)
             {
+                <!-- Membres du pôle Présidence -->
                 <p class="titrePoleEquipe">Présidence</p>
                 <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la gestion global de la structure et du suivi de la stratégie</p>
                 <hr class="hrNoir">
                 foreach (var item in Model)
                 {
+                    <!-- Vérification de l'existance d'un président -->
                     if (item.Pole == Pole.Bureau && item.Role == Role.President)
                     {
-                        <div class="cadreMembre d-flex justify-content-start">  
+                        <div class="cadreMembre d-flex justify-content-start"> 
+                            <!-- Photo du membre --> 
                             <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                             <div class="descriptionMembre">
+                                <!-- Nom et prénom membre --> 
                                 <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                    <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                    <div class="motMembresEquipe">
-                                        <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                    </div>
+                                <!-- Role du membre --> 
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
                             </div>
                         </div>
                     }
@@ -52,10 +58,10 @@
                             <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                             <div class="descriptionMembre">
                                 <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                    <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                    <div class="motMembresEquipe">
-                                        <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                    </div>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
                             </div>
                         </div>
                     }
@@ -68,10 +74,10 @@
                             <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                             <div class="descriptionMembre">
                                 <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                    <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                    <div class="motMembresEquipe">
-                                        <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                    </div>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
                             </div>
                         </div>
                     }
@@ -84,18 +90,19 @@
                             <img src=@Html.DisplayFor(modelItem => item.Photo) class="photoMembre" alt="image membre anonyme"></img>
                             <div class="descriptionMembre">
                                 <p class="nomMembreEquipe">@Html.DisplayFor(modelItem => item.Prenom) @Html.DisplayFor(modelItem => item.Nom)</p>
-                                    <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
-                                    <div class="motMembresEquipe">
-                                        <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
-                                    </div>
+                                <p class="roleMembreEquipe">@Html.DisplayFor(modelItem => item.Role) </p>
+                                <div class="motMembresEquipe">
+                                    <p class="d-flex align-items-end">@Html.DisplayFor(modelItem => item.Mot)</p>
+                                </div>
                             </div>
                         </div>
                     }
                 }
 
-                        <p class="titrePoleEquipe">Pôle Trésorerie</p>
-                        <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la gestion financière</p>
-                        <hr class="hrNoir">
+                <!-- Membres du pôle Trésorerie -->
+                <p class="titrePoleEquipe">Pôle Trésorerie</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la gestion financière</p>
+                <hr class="hrNoir">
                 foreach (var item in Model)
                 {
                     if (item.Pole == Pole.Tresorerie && item.Role == Role.Tresorier)
@@ -145,9 +152,10 @@
                     }
                 }
 
-                        <p class="titrePoleEquipe">Pôle Étude</p>
-                        <p class="mb-2 descriptionPoleEquipe">Pôle charge du suivi des études et de l'accompagnement des clients et des réalisateurs</p>
-                        <hr class="hrNoir">
+                <!-- Membres du pôle Etude -->
+                <p class="titrePoleEquipe">Pôle Étude</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle charge du suivi des études et de l'accompagnement des clients et des réalisateurs</p>
+                <hr class="hrNoir">
                 foreach (var item in Model)
                 {
                     if (item.Pole == Pole.Etude && item.Role == Role.RespoSuiviEtudes)
@@ -181,9 +189,10 @@
                     }
                 }
 
-                        <p class="titrePoleEquipe">Pôle Communication</p>
-                        <p class="mb-2 descriptionPoleEquipe">Pôle en charge de l’identité visuelle de la J.E.</p>
-                        <hr class="hrNoir">
+                <!-- Membres du pôle Communication -->
+                <p class="titrePoleEquipe">Pôle Communication</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de l’identité visuelle de la J.E.</p>
+                <hr class="hrNoir">
                 foreach (var item in Model)
                 {
                     if (item.Pole == Pole.Communication && item.Role == Role.RespoCom)
@@ -217,9 +226,10 @@
                     }
                 }
 
-                        <p class="titrePoleEquipe">Pôle Développement Commercial</p>
-                        <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la stratégie et du développement commercial</p>
-                        <hr class="hrNoir">
+                <!-- Membres du pôle Développement Commercial -->
+                <p class="titrePoleEquipe">Pôle Développement Commercial</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la stratégie et du développement commercial</p>
+                <hr class="hrNoir">
                 foreach (var item in Model)
                 {
                     if (item.Pole == Pole.DevCommercial && item.Role == Role.RespoDevCommercial)
@@ -253,10 +263,10 @@
                     }
                 }
 
-
-                        <p class="titrePoleEquipe">Pôle Qualité</p>
-                        <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la conformité et de la qualité des prestations</p>
-                        <hr class="hrNoir">
+                <!-- Membres du pôle Qulité -->
+                <p class="titrePoleEquipe">Pôle Qualité</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge de la conformité et de la qualité des prestations</p>
+                <hr class="hrNoir">
                 foreach (var item in Model)
                 {
                     if (item.Pole == Pole.Qualite && item.Role == Role.RespoQualite)
@@ -290,9 +300,10 @@
                     }
                 }
 
-                        <p class="titrePoleEquipe">Pôle DSI (Direction des Systèmes d’Informations)</p>
-                        <p class="mb-2 descriptionPoleEquipe">Pôle en charge des Systèmes d'Information</p>
-                        <hr class="hrNoir">
+                <!-- Membres du pôle DSI -->
+                <p class="titrePoleEquipe">Pôle DSI (Direction des Systèmes d’Informations)</p>
+                <p class="mb-2 descriptionPoleEquipe">Pôle en charge des Systèmes d'Information</p>
+                <hr class="hrNoir">
                 foreach (var item in Model)
                 {
                     if (item.Pole == Pole.SystemeInformation && item.Role == Role.RespoSystInformation)
@@ -328,6 +339,5 @@
             }
         </div>
     </div>
-
 </div>
 

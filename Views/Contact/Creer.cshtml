@@ -13,6 +13,7 @@
     }
     
     <div class="titreContact">
+        <!-- Titre de la page -->
         <h2><span style="color:white">Nous </span>contacter</h2>
         <hr class="hrBlanc">
     </div>
@@ -22,28 +23,33 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="row d-flex justify-content-center mt-3">
                     <div class="form-group col-md-3">
+                        <!-- Champ de saisie du nom -->
                         <div class="mb-3">
                             <input type="text" placeholder="Votre nom" asp-for="Nom" class="form-control"/>
                             <span asp-validation-for="Nom" class="text-danger"></span>
                         </div>
 
+                        <!-- Champ de saisie de l'email -->
                         <div class="mb-3">
                             <input type="email" placeholder="Votre email" asp-for="Email" class="form-control" />
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
 
+                        <!-- Champ de saisie du numéro de téléphone -->
                         <div class="mb-3">
                             <input type="tel" placeholder="Numéro de téléphone" asp-for="Numero" class="form-control" />
                             <span asp-validation-for="Numero" class="text-danger"></span>
                         </div>
                     </div>
 
+                    <!-- Champ de saisie de l'objet -->
                     <div class="form-group col-md-6">
                         <div class="mb-3">
                             <input type="text" placeholder="Objet" asp-for="Objet" class="form-control" />
                             <span asp-validation-for="Objet" class="text-danger"></span>
                         </div>
 
+                        <!-- Champ de saisie du message -->
                         <div class="mb-3">
                             <textarea placeholder="Message" asp-for="Message" class="form-control champMessage"></textarea>
                             <span asp-validation-for="Message" class="text-danger"></span>
@@ -55,6 +61,7 @@
 
             <div class="mt-3">
                 <div class="col-md-5">
+                    <!-- Bouton d'envoi du formulaire -->
                     <input type="submit" value="Envoyer" class="btn boutonFormulaire" style="width: 23vw;" />
                 </div>
             </div>
@@ -64,6 +71,7 @@
             <p class="detailsContactTitre">Détails de contacts</p>
             <p class="descriptionDetailsContact">Les locaux d’AEI sont situés au sein de l’ENSEIRB-MATMECA</p>
 
+            <!-- Adresse, numéro de téléphone, email -->
             <div class="d-flex contacts">
                 <div class="col-md-6">
                     <p class="detailsContactInformations">1 Avenue du Dr Albert Schweitzer, 33400 Talence</p>
@@ -76,6 +84,7 @@
             </div>
 
         </div>
+        <!-- lien vers les reseaux sociaux-->
         <div class="d-flex justify-content-center">
             <a href="https://www.facebook.com/JuniorAEI/?locale2=fr_FR&paipv=0&eav=Afa_Sxr641Vl7wUA_pyoTwuDQvLvwyEndk8c1FpMVxx-boZgJnxp84IRXaBm4_748tI&_rdr" class="boutonReseauSocial" role="button" aria-pressed="true"><i class="bi bi-facebook"></i></a>
             <a href="https://www.linkedin.com/in/junioraei/?originalSubdomain=fr" class="boutonReseauSocial" role="button" aria-pressed="true"><i class="bi bi-linkedin"></i></a>  

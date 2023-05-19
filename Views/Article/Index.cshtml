@@ -5,22 +5,29 @@
 
 <div class="backActualités">
     <div class="titrePageActualites">
+        <!-- Titre de la page -->
         <h2>Actualités</h2>
+        <!-- Ligne de séparation -->
         <hr class="hrNoirTitreActualités">
     </div>
     <div class="px-4">
         <div class="row">
+            <!-- Vérification si des articles sont présents -->
             @if (Model.Count() > 0)
             {
                 foreach (var item in Model)
                 {
                     <div class="unArticlePageActualites">
+                        <!-- Image de l'actualité -->
                         <img class="imagesArticlePageActualites" alt="image de l'actualité" src=@Html.DisplayFor(modelItem => item.Image)></img>
                         <div class="descriptionArticlePageActualites">
                             <div style="margin-bottom: 0;">
+                                <!-- Titre de l'article -->
                                 <p class="titreArticlePageActualites">@Html.DisplayFor(modelItem => item.Titre)</p>
+                                <!-- Description de l'article -->
                                 <p class="">@Html.DisplayFor(modelItem => item.Description)</p>
                                 <div class="d-flex justify-content-center">
+                                    <!-- Lien "Lire la suite" redirigeant vers les détails de l'article -->
                                     <a asp-action="Details" asp-route-id="@item.Id" class="lireLaSuite" role="button" aria-pressed="true">Lire la suite</a>
                                 </div>
                             </div>

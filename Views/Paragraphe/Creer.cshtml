@@ -4,10 +4,13 @@
     ViewData["Title"] = "Ajouter un paragraphe";
 }
 <div class="backMembreCreer">
+    <!-- Titre de la page -->
     <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Ajouter un paragraphe</h1>
     <form asp-action="Creer">
         <fieldset class="p-3">
+            <!-- Alert si envoi d un formulaire non conforme-->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Champ pour le titre -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Titre" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -15,6 +18,7 @@
                     <span asp-validation-for="Titre" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le texte -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Texte" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -22,19 +26,23 @@
                     <span asp-validation-for="Texte" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour l'article -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Article" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de séléction de l'article -->
                     <select asp-for="ArticleId" class="form-control" asp-items="ViewBag.ArticlesId"></select>
                     <span asp-validation-for="ArticleId" class="text-danger"></span>
                 </div>
             </div>
         </fieldset>
         <div class="form-group text-center mt-4">
+            <!-- Bouton d'ajout du paragraphe -->
             <input type="submit" value="Ajouter" class="btn btn-primary" />
         </div>
     </form>
     <div class="mt-5 pt-5 ml-5">
+        <!-- Bouton de retour à la page précédente -->
         <a class="text-decoration-none" asp-action="Index"><i
             class="bi bi-arrow-left-circle-fill"></i> Retour à
             la page précédente</a>

@@ -5,11 +5,14 @@
 }
 
 <div class="backMembreCreer">
+    <!-- Titre de la page --> 
     <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Modifier le membre @Html.DisplayFor(model => model.Prenom) @Html.DisplayFor(model => model.Nom)</h1>
     <form asp-action="Modifier">
         <input type="hidden" asp-for="Id" />
+        <!-- Alert si envoi d un mauvais formulaire --> 
         <fieldset class="fieldset-style p-3">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Champ pour le nom --> 
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Nom" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -17,6 +20,7 @@
                     <span asp-validation-for="Nom" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le prénom -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Prenom" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -24,6 +28,7 @@
                     <span asp-validation-for="Prenom" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour la photo -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Photo" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -38,16 +43,20 @@
                     <span asp-validation-for="Mot" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le mandat-->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Mandat" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de sélélction du mandat-->
                     <select asp-for="MandatId" class="form-control" asp-items="ViewBag.MandatId"></select>
                     <span asp-validation-for="MandatId" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le pôle -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Pole" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de séléction du pôle -->
                     <select class="form-control" name="Pole">
                         @foreach (var pole in (string[])ViewData["poles"])
                         {
@@ -57,9 +66,11 @@
                     <span asp-validation-for="Pole" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le rôle -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Role" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de séléction du rôle -->
                     <select class="form-control" name="Role">
                         @foreach (var role in (string[])ViewData["roles"])
                         {
@@ -71,11 +82,13 @@
             </div>
         </fieldset>
         <div class="form-group text-center mt-4">
+            <!-- Bouton de modification -->
             <input type="submit" value="Modifier" class="btn btn-primary" />
         </div>
     </form>
 
     <div class="mt-5 pt-5 ml-5">
+        <!-- Buton de retour à la page précédente -->
         <a class="text-decoration-none" asp-action="IndexAdmin"><i
             class="bi bi-arrow-left-circle-fill"></i> Retour à
             la page précédente</a>

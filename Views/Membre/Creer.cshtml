@@ -4,10 +4,13 @@
     ViewData["Title"] = "Ajouter un membre";
 }
 <div class="backMembreCreer">
+    <!-- Titre de la page-->
     <h1 class="mb-4" style="color:#0C2764; text-align:center; font-weight:bold;">Ajouter un membre</h1>
+    <!-- Formulaire de création d'un membre -->
     <form asp-action="Creer">
         <fieldset class="p-3">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Champ pour le nom -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Nom" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -15,6 +18,7 @@
                     <span asp-validation-for="Nom" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le prénom -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Prenom" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -22,6 +26,7 @@
                     <span asp-validation-for="Prenom" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour la photo -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Photo" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -29,6 +34,7 @@
                     <span asp-validation-for="Photo" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le mot -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Mot" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
@@ -36,16 +42,20 @@
                     <span asp-validation-for="Mot" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le mandat -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Mandat" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de séléction du mandat -->
                     <select asp-for="MandatId" class="form-control" asp-items="ViewBag.MandatId"></select>
                     <span asp-validation-for="MandatId" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le pôle -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Pole" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de séléction du pôle -->
                     <select class="form-control" name="Pole">
                         @foreach (var pole in (string[])ViewData["poles"])
                         {
@@ -55,9 +65,11 @@
                     <span asp-validation-for="Pole" class="text-danger"></span>
                 </div>
             </div>
+            <!-- Champ pour le rôle -->
             <div class="form-group row justify-content-center py-2">
                 <label asp-for="Role" class="control-label" style="text-align: center;"></label>
                 <div class="col-sm-6">
+                    <!-- Liste de séléction du rôle -->
                     <select class="form-control" name="Role">
                         @foreach (var role in (string[])ViewData["roles"])
                         {
@@ -69,16 +81,17 @@
                 </div>
             </div>
         </fieldset>
+        <!-- Bouton de création du membre-->
         <div class="form-group text-center mt-4">
             <input type="submit" value="Ajouter" class="btn btn-primary" />
         </div>
     </form>
     <div class="mt-5 pt-5 ml-5">
+        <!-- Bouton pour revenir à la page précédente-->
         <a class="text-decoration-none" asp-action="IndexAdmin"><i
             class="bi bi-arrow-left-circle-fill"></i> Retour à
             la page précédente</a>
     </div>
-
 </div>
 
 @section Scripts {

@@ -16,7 +16,6 @@ public class ContactController : Controller
     }
 
 
-
     // GET: Contact/Create
     // Permet d'ajouter un contact grâce au formulaire
     public IActionResult Creer()
